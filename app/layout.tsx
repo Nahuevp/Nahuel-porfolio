@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Full Stack Developer | .NET, Angular & React',
-  description: 'Full Stack Developer building modern web applications. Passionate about clean code, learning new technologies, and solving real problems.',
+  title: 'Portfolio de Nahuel Viera',
+  description: 'Nahuel Viera – Full Stack Developer focused on .NET and Angular. Building modern web applications and solving real problems through software.',
   generator: 'v0.app',
   icons: {
     icon: [
