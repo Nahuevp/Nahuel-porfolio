@@ -71,7 +71,7 @@ Tecnologías:
 
 El portfolio está disponible en:
 
-👉 **(aquí pondrás el link cuando deployes)**
+👉 https://nahuel-viera-porfolio.vercel.app/
 
 
 ---
