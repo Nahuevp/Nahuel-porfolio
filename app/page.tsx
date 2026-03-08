@@ -19,11 +19,15 @@ const content = {
       contact: 'Contactame',
     },
     about: {
-      title: 'Sobre Mí',
+      title: 'Sobre mí',
       text1: 'Soy un desarrollador full stack junior terminando mi Licenciatura en Ciencias de la Computación, enfocado en construir aplicaciones web que funcionen realmente bien. Disfruto el lado de resolución de problemas del desarrollo—descubrir cómo estructurar el código para que sea mantenible, testeable y fácil de entender para otros.',
       text2: 'Mi experiencia abarca toda la pila: he trabajado con C# y ASP.NET Core en el backend, construido frontends responsivos con Angular y React, y diseñado bases de datos con SQL Server y PostgreSQL. Pero más allá de la pila tecnológica, lo que me impulsa es aprender cómo escribir código que importe—código que resuelva problemas, escale gracefully, y no haga que los desarrolladores futuros quieran gritar.',
       text3: 'Estoy buscando mi primera oportunidad en la industria donde pueda crecer, aportar valor real y colaborar con personas que se importan por hacer las cosas bien. Soy el tipo de desarrollador que lee documentación, hace buenas preguntas y realmente disfruta refactorizar.',
-      english: 'Inglés: B2 (Certificación ECCE)',
+    },
+    languages: {
+      title: 'Idiomas',
+      spanish: 'Español — Nativo',
+      english: 'Inglés — B2 (Certificación ECCE)',
     },
     tech: {
       title: 'Stack Tecnológico',
@@ -68,6 +72,21 @@ const content = {
       greeting: "Hey, I'm Nahuel.",
       title: 'Full Stack Developer focused on .NET and Angular',
       subtitle: 'Building modern web applications and solving real problems through software.',
+    },
+    cta: {
+      work: 'View My Work',
+      contact: 'Get In Touch',
+    },
+    about: {
+      title: 'About Me',
+      text1: "I'm a junior full-stack developer finishing my Bachelor's degree in Computer Science, focused on building web applications that actually work well. I enjoy the problem-solving side of development—figuring out how to structure code so it's maintainable, testeable, and easy for others to understand.",
+      text2: "My experience spans across the full stack: I've worked with C# and ASP.NET Core on the backend, built responsive frontends with Angular and React, and designed databases with SQL Server and PostgreSQL. But beyond the tech stack, what drives me is learning how to write code that matters—code that solves problems, scales gracefully, and doesn't make future developers want to scream.",
+      text3: "I'm looking for my first role in the industry where I can grow, contribute real value, and collaborate with people who care about doing things right. I'm the type of developer who reads documentation, asks good questions, and actually enjoys refactoring.",
+    },
+    languages: {
+      title: 'Languages',
+      spanish: 'Spanish — Native',
+      english: 'English — B2 (ECCE Certification)',
     },
     cta: {
       work: 'View My Work',
@@ -120,11 +139,36 @@ const content = {
 }
 
 const technologies = {
-  backend: ['C#', '.NET / ASP.NET Core', 'Entity Framework Core', 'REST APIs'],
-  frontend: ['Angular', 'TypeScript', 'Angular Material', 'Bootstrap', 'HTML', 'CSS'],
-  databases: ['SQL Server', 'PostgreSQL'],
-  tools: ['Git', 'Docker', 'Swagger', 'Azure', 'Vercel'],
-  learning: ['React'],
+  backend: [
+    { name: 'C#', icon: '⚙️' },
+    { name: '.NET / ASP.NET Core', icon: '🔧' },
+    { name: 'Entity Framework Core', icon: '💾' },
+    { name: 'REST APIs', icon: '🌐' },
+  ],
+  frontend: [
+    { name: 'Angular', icon: '🅰️' },
+    { name: 'TypeScript', icon: '📘' },
+    { name: 'Angular Material', icon: '✨' },
+    { name: 'Bootstrap', icon: '📦' },
+    { name: 'Tailwind CSS', icon: '🎨' },
+    { name: 'HTML', icon: '📄' },
+    { name: 'CSS', icon: '🎭' },
+  ],
+  databases: [
+    { name: 'SQL Server', icon: '🗄️' },
+    { name: 'PostgreSQL', icon: '🐘' },
+  ],
+  tools: [
+    { name: 'Git', icon: '🔗' },
+    { name: 'Docker', icon: '🐳' },
+    { name: 'Swagger', icon: '📚' },
+    { name: 'Azure', icon: '☁️' },
+    { name: 'Vercel', icon: '⚡' },
+    { name: 'Railway', icon: '🚂' },
+  ],
+  learning: [
+    { name: 'React', icon: '⚛️' },
+  ],
 }
 
 export default function Portfolio() {
@@ -154,8 +198,9 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background text-foreground dark:bg-background dark:text-foreground">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-900/10 to-purple-900/10 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-900/10 to-cyan-900/10 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-900/15 to-purple-900/15 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-900/15 to-cyan-900/15 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-purple-900/10 to-blue-900/10 dark:from-purple-900/20 dark:to-blue-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50" />
       </div>
 
       {/* Navigation */}
@@ -169,7 +214,7 @@ export default function Portfolio() {
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
             <a href="#about" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
-              {language === 'es' ? 'Sobre' : 'About'}
+              {language === 'es' ? 'Sobre mí' : 'About'}
             </a>
             <a href="#projects" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
               {language === 'es' ? 'Proyectos' : 'Projects'}
@@ -179,10 +224,10 @@ export default function Portfolio() {
             </a>
             <button
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
+              className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors flex items-center gap-1"
               aria-label="Toggle language"
             >
-              {language === 'es' ? 'EN' : 'ES'}
+              <span>{language === 'es' ? '🇪🇸 ES' : '🇬🇧 EN'}</span>
             </button>
             <button
               onClick={toggleTheme}
@@ -203,7 +248,8 @@ export default function Portfolio() {
         <div className="relative z-10 max-w-4xl mx-auto w-full">
           <div className="flex flex-col items-center text-center gap-8 sm:gap-10">
             {/* Profile Image */}
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden ring-2 ring-foreground/10 hover:ring-foreground/20 transition-all">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-2 sm:ring-4 ring-offset-4 ring-offset-background/50 ring-foreground/20 dark:ring-offset-background/30 hover:ring-foreground/30 hover:scale-105 transition-all duration-300 shadow-lg dark:shadow-2xl">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 pointer-events-none" />
               <Image
                 src="/images/profile.jpg"
                 alt="Nahuel Viera"
@@ -253,7 +299,19 @@ export default function Portfolio() {
             <p>{t.about.text1}</p>
             <p>{t.about.text2}</p>
             <p>{t.about.text3}</p>
-            <p className="pt-4 text-foreground/70 font-medium">📍 {t.about.english}</p>
+          </div>
+
+          {/* Languages Section */}
+          <div className="mt-12 pt-12 border-t border-border">
+            <h3 className="text-2xl sm:text-3xl font-semibold mb-6">{t.languages.title}</h3>
+            <div className="space-y-3">
+              <p className="text-base sm:text-lg text-foreground/80">
+                <span className="font-medium text-foreground">🇪🇸</span> {t.languages.spanish}
+              </p>
+              <p className="text-base sm:text-lg text-foreground/80">
+                <span className="font-medium text-foreground">🇬🇧</span> {t.languages.english}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -269,10 +327,10 @@ export default function Portfolio() {
               <div className="flex flex-wrap gap-2">
                 {technologies.backend.map((tech) => (
                   <span
-                    key={tech}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 transition-colors"
+                    key={tech.name}
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
                   >
-                    {tech}
+                    <span>{tech.icon}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -284,10 +342,10 @@ export default function Portfolio() {
               <div className="flex flex-wrap gap-2">
                 {technologies.frontend.map((tech) => (
                   <span
-                    key={tech}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 transition-colors"
+                    key={tech.name}
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
                   >
-                    {tech}
+                    <span>{tech.icon}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -299,10 +357,10 @@ export default function Portfolio() {
               <div className="flex flex-wrap gap-2">
                 {technologies.databases.map((tech) => (
                   <span
-                    key={tech}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 transition-colors"
+                    key={tech.name}
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
                   >
-                    {tech}
+                    <span>{tech.icon}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -314,10 +372,10 @@ export default function Portfolio() {
               <div className="flex flex-wrap gap-2">
                 {technologies.tools.map((tech) => (
                   <span
-                    key={tech}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 transition-colors"
+                    key={tech.name}
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
                   >
-                    {tech}
+                    <span>{tech.icon}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -329,10 +387,10 @@ export default function Portfolio() {
               <div className="flex flex-wrap gap-2">
                 {technologies.learning.map((tech) => (
                   <span
-                    key={tech}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 transition-colors opacity-75"
+                    key={tech.name}
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 opacity-75"
                   >
-                    {tech}
+                    <span>{tech.icon}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -347,27 +405,37 @@ export default function Portfolio() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-16">{t.projects.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
-              { key: 'tracklass', tech: 'Angular, C#, .NET' },
-              { key: 'rento', tech: 'Angular, C#, .NET' },
-              { key: 'technicalTest', tech: 'Angular' },
-              { key: 'restApi', tech: 'C#, .NET' },
-              { key: 'portfolio', tech: 'React, Tailwind, Next.js' },
+              { key: 'tracklass', tech: 'Angular, C#, .NET', icon: '📊' },
+              { key: 'rento', tech: 'Angular, C#, .NET', icon: '🏠' },
+              { key: 'technicalTest', tech: 'Angular', icon: '✅' },
+              { key: 'restApi', tech: 'C#, .NET', icon: '🔌' },
+              { key: 'portfolio', tech: 'React, Tailwind, Next.js', icon: '💼' },
             ].map((project) => {
               const proj = t.projects[project.key as keyof typeof t.projects]
               return (
                 <div
                   key={project.key}
-                  className="group p-6 sm:p-8 bg-card/50 dark:bg-card/30 rounded-lg border border-border hover:border-foreground/20 hover:bg-card/80 transition-all"
+                  className="group overflow-hidden rounded-lg border border-border bg-card/50 dark:bg-card/30 hover:border-foreground/20 hover:shadow-lg dark:hover:shadow-xl hover:scale-105 transition-all duration-200"
                 >
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 group-hover:text-foreground/90 transition-colors">
-                    {proj.name}
-                  </h3>
-                  <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed">
-                    {proj.desc}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs sm:text-sm text-foreground/50 font-medium">{project.tech}</span>
-                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {/* Project Image/Preview */}
+                  <div className="w-full h-32 sm:h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 flex items-center justify-center overflow-hidden relative">
+                    <div className="text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-200">
+                      {project.icon}
+                    </div>
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="p-6 sm:p-8">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-3 group-hover:text-foreground/90 transition-colors">
+                      {proj.name}
+                    </h3>
+                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed">
+                      {proj.desc}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs sm:text-sm text-foreground/50 font-medium">{project.tech}</span>
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </div>
                   </div>
                 </div>
               )
