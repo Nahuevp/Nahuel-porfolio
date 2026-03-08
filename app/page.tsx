@@ -8,11 +8,11 @@ type Language = 'es' | 'en'
 
 const content = {
   es: {
-    nav: 'Nahuel Viera – Desarrollador de Software',
+    nav: 'Nahuel Viera — Desarrollador de Software 🇺🇾',
     hero: {
       greeting: 'Hola, soy Nahuel.',
-      title: 'Desarrollador Full Stack enfocado en .NET y Angular',
-      subtitle: 'Construyendo aplicaciones web modernas y resolviendo problemas reales a través del software.',
+      title: 'Desarrollador Full Stack',
+      subtitle: 'Especializado en .NET y Angular — construyendo aplicaciones web modernas y resolviendo problemas reales a través del software.',
     },
     cta: {
       work: 'Ver mi trabajo',
@@ -27,7 +27,8 @@ const content = {
     languages: {
       title: 'Idiomas',
       spanish: 'Español — Nativo',
-      english: 'Inglés — B2 (Certificación ECCE)',
+      english: 'Inglés — Nivel B2 (Certificación ECCE)',
+      englishDesc: 'Puedo leer documentación técnica, comunicarme en entornos de desarrollo y trabajar con recursos en inglés sin problemas.',
     },
     tech: {
       title: 'Stack Tecnológico',
@@ -67,11 +68,11 @@ const content = {
     footer: 'Construido con React, Tailwind CSS y Next.js',
   },
   en: {
-    nav: 'Nahuel Viera – Software Developer',
+    nav: 'Nahuel Viera — Software Developer 🇺🇾',
     hero: {
       greeting: "Hey, I'm Nahuel.",
-      title: 'Full Stack Developer focused on .NET and Angular',
-      subtitle: 'Building modern web applications and solving real problems through software.',
+      title: 'Full Stack Developer',
+      subtitle: 'Specialized in .NET and Angular — building modern web applications and solving real problems through software.',
     },
     cta: {
       work: 'View My Work',
@@ -87,6 +88,7 @@ const content = {
       title: 'Languages',
       spanish: 'Spanish — Native',
       english: 'English — B2 (ECCE Certification)',
+      englishDesc: 'I can read technical documentation, communicate in development environments, and work with English resources without issues.',
     },
     cta: {
       work: 'View My Work',
@@ -140,34 +142,34 @@ const content = {
 
 const technologies = {
   backend: [
-    { name: 'C#', icon: '⚙️' },
-    { name: '.NET / ASP.NET Core', icon: '🔧' },
-    { name: 'Entity Framework Core', icon: '💾' },
-    { name: 'REST APIs', icon: '🌐' },
+    { name: 'C#', logo: 'C#' },
+    { name: '.NET / ASP.NET Core', logo: '.NET' },
+    { name: 'Entity Framework Core', logo: 'EF' },
+    { name: 'REST APIs', logo: 'REST' },
   ],
   frontend: [
-    { name: 'Angular', icon: '🅰️' },
-    { name: 'TypeScript', icon: '📘' },
-    { name: 'Angular Material', icon: '✨' },
-    { name: 'Bootstrap', icon: '📦' },
-    { name: 'Tailwind CSS', icon: '🎨' },
-    { name: 'HTML', icon: '📄' },
-    { name: 'CSS', icon: '🎭' },
+    { name: 'Angular', logo: 'A' },
+    { name: 'TypeScript', logo: 'TS' },
+    { name: 'Angular Material', logo: 'AM' },
+    { name: 'Bootstrap', logo: 'BS' },
+    { name: 'Tailwind CSS', logo: 'TW' },
+    { name: 'HTML', logo: 'HTML' },
+    { name: 'CSS', logo: 'CSS' },
   ],
   databases: [
-    { name: 'SQL Server', icon: '🗄️' },
-    { name: 'PostgreSQL', icon: '🐘' },
+    { name: 'SQL Server', logo: 'SQL' },
+    { name: 'PostgreSQL', logo: 'PG' },
   ],
   tools: [
-    { name: 'Git', icon: '🔗' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Swagger', icon: '📚' },
-    { name: 'Azure', icon: '☁️' },
-    { name: 'Vercel', icon: '⚡' },
-    { name: 'Railway', icon: '🚂' },
+    { name: 'Git', logo: 'Git' },
+    { name: 'Docker', logo: 'Docker' },
+    { name: 'Swagger', logo: 'SW' },
+    { name: 'Azure', logo: 'Azure' },
+    { name: 'Vercel', logo: 'Vercel' },
+    { name: 'Railway', logo: 'RW' },
   ],
   learning: [
-    { name: 'React', icon: '⚛️' },
+    { name: 'React', logo: 'React' },
   ],
 }
 
@@ -197,10 +199,21 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground dark:bg-background dark:text-foreground">
       {/* Animated Background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-900/15 to-purple-900/15 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-900/15 to-cyan-900/15 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-purple-900/10 to-blue-900/10 dark:from-purple-900/20 dark:to-blue-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50" />
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-background via-background to-muted/10 dark:to-muted/5">
+        {/* Top right glow */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/20 to-purple-600/20 dark:from-blue-500/30 dark:to-purple-500/30 rounded-full blur-3xl animate-soft-glow" />
+        
+        {/* Bottom left glow */}
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-600/15 to-blue-600/15 dark:from-purple-500/25 dark:to-blue-500/25 rounded-full blur-3xl animate-soft-glow" style={{ animationDelay: '2s' }} />
+        
+        {/* Center accent */}
+        <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-gradient-to-br from-blue-700/10 to-purple-700/10 dark:from-blue-600/20 dark:to-purple-600/20 rounded-full blur-3xl -translate-x-1/2 opacity-60" />
+        
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style={{
+          backgroundImage: 'linear-gradient(0deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.1) calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.1) calc(100% - 1px))',
+          backgroundSize: '50px 50px'
+        }} />
       </div>
 
       {/* Navigation */}
@@ -224,10 +237,10 @@ export default function Portfolio() {
             </a>
             <button
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors flex items-center gap-1"
+              className="px-2 sm:px-3 py-1 text-xs sm:text-sm text-foreground/70 hover:text-foreground transition-colors"
               aria-label="Toggle language"
             >
-              <span>{language === 'es' ? '🇪🇸 ES' : '🇬🇧 EN'}</span>
+              {language === 'es' ? '🇪🇸 ES | 🇺🇸 EN' : '🇪🇸 ES | 🇺🇸 EN'}
             </button>
             <button
               onClick={toggleTheme}
@@ -248,15 +261,18 @@ export default function Portfolio() {
         <div className="relative z-10 max-w-4xl mx-auto w-full">
           <div className="flex flex-col items-center text-center gap-8 sm:gap-10">
             {/* Profile Image */}
-            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-2 sm:ring-4 ring-offset-4 ring-offset-background/50 ring-foreground/20 dark:ring-offset-background/30 hover:ring-foreground/30 hover:scale-105 transition-all duration-300 shadow-lg dark:shadow-2xl">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 pointer-events-none" />
-              <Image
-                src="/images/profile.jpg"
-                alt="Nahuel Viera"
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-purple-500/30 dark:from-blue-400/40 dark:to-purple-400/40 blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative w-full h-full rounded-full overflow-hidden ring-2 sm:ring-4 ring-offset-4 sm:ring-offset-6 ring-offset-background/50 dark:ring-offset-background/30 ring-foreground/15 dark:ring-foreground/30 hover:ring-foreground/30 dark:hover:ring-foreground/40 hover:scale-105 transition-all duration-300 shadow-lg dark:shadow-2xl">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/15 to-purple-500/15 dark:from-blue-400/20 dark:to-purple-400/20 pointer-events-none" />
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Nahuel Viera"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Content */}
@@ -304,13 +320,18 @@ export default function Portfolio() {
           {/* Languages Section */}
           <div className="mt-12 pt-12 border-t border-border">
             <h3 className="text-2xl sm:text-3xl font-semibold mb-6">{t.languages.title}</h3>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-base sm:text-lg text-foreground/80">
                 <span className="font-medium text-foreground">🇪🇸</span> {t.languages.spanish}
               </p>
-              <p className="text-base sm:text-lg text-foreground/80">
-                <span className="font-medium text-foreground">🇬🇧</span> {t.languages.english}
-              </p>
+              <div>
+                <p className="text-base sm:text-lg text-foreground/80 mb-2">
+                  <span className="font-medium text-foreground">🇬🇧</span> {t.languages.english}
+                </p>
+                <p className="text-base sm:text-lg text-foreground/70 ml-6">
+                  {t.languages.englishDesc}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -328,9 +349,9 @@ export default function Portfolio() {
                 {technologies.backend.map((tech) => (
                   <span
                     key={tech.name}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 font-medium"
                   >
-                    <span>{tech.icon}</span>{tech.name}
+                    <span className="w-5 h-5 flex items-center justify-center text-xs font-bold text-foreground/60">{tech.logo}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -343,9 +364,9 @@ export default function Portfolio() {
                 {technologies.frontend.map((tech) => (
                   <span
                     key={tech.name}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 font-medium"
                   >
-                    <span>{tech.icon}</span>{tech.name}
+                    <span className="w-5 h-5 flex items-center justify-center text-xs font-bold text-foreground/60">{tech.logo}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -358,9 +379,9 @@ export default function Portfolio() {
                 {technologies.databases.map((tech) => (
                   <span
                     key={tech.name}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 font-medium"
                   >
-                    <span>{tech.icon}</span>{tech.name}
+                    <span className="w-5 h-5 flex items-center justify-center text-xs font-bold text-foreground/60">{tech.logo}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -373,9 +394,9 @@ export default function Portfolio() {
                 {technologies.tools.map((tech) => (
                   <span
                     key={tech.name}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 font-medium"
                   >
-                    <span>{tech.icon}</span>{tech.name}
+                    <span className="w-5 h-5 flex items-center justify-center text-xs font-bold text-foreground/60">{tech.logo}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -388,9 +409,9 @@ export default function Portfolio() {
                 {technologies.learning.map((tech) => (
                   <span
                     key={tech.name}
-                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 opacity-75"
+                    className="px-3 sm:px-4 py-2 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md dark:hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2 opacity-75 font-medium"
                   >
-                    <span>{tech.icon}</span>{tech.name}
+                    <span className="w-5 h-5 flex items-center justify-center text-xs font-bold text-foreground/60">{tech.logo}</span>{tech.name}
                   </span>
                 ))}
               </div>
@@ -405,17 +426,17 @@ export default function Portfolio() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-16">{t.projects.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
-              { key: 'tracklass', tech: 'Angular, C#, .NET', icon: '📊' },
-              { key: 'rento', tech: 'Angular, C#, .NET', icon: '🏠' },
-              { key: 'technicalTest', tech: 'Angular', icon: '✅' },
-              { key: 'restApi', tech: 'C#, .NET', icon: '🔌' },
-              { key: 'portfolio', tech: 'React, Tailwind, Next.js', icon: '💼' },
+              { key: 'tracklass', techs: ['Angular', 'C#', '.NET'], icon: '📊' },
+              { key: 'rento', techs: ['Angular', 'C#', '.NET'], icon: '🏠' },
+              { key: 'technicalTest', techs: ['Angular'], icon: '✅' },
+              { key: 'restApi', techs: ['C#', '.NET'], icon: '🔌' },
+              { key: 'portfolio', techs: ['React', 'Tailwind', 'Next.js'], icon: '💼' },
             ].map((project) => {
               const proj = t.projects[project.key as keyof typeof t.projects]
               return (
                 <div
                   key={project.key}
-                  className="group overflow-hidden rounded-lg border border-border bg-card/50 dark:bg-card/30 hover:border-foreground/20 hover:shadow-lg dark:hover:shadow-xl hover:scale-105 transition-all duration-200"
+                  className="group overflow-hidden rounded-lg border border-border bg-card/50 dark:bg-card/30 hover:border-foreground/20 hover:shadow-lg dark:hover:shadow-xl hover:scale-105 transition-all duration-200 flex flex-col"
                 >
                   {/* Project Image/Preview */}
                   <div className="w-full h-32 sm:h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 flex items-center justify-center overflow-hidden relative">
@@ -425,16 +446,29 @@ export default function Portfolio() {
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6 sm:p-8">
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col">
                     <h3 className="text-lg sm:text-xl font-semibold mb-3 group-hover:text-foreground/90 transition-colors">
                       {proj.name}
                     </h3>
-                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed">
+                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed flex-1">
                       {proj.desc}
                     </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs sm:text-sm text-foreground/50 font-medium">{project.tech}</span>
-                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    
+                    {/* Technology Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techs.map((tech) => (
+                        <span
+                          key={tech}
+                          className="inline-flex px-2 sm:px-3 py-1 text-xs sm:text-sm bg-muted/70 dark:bg-muted/40 border border-border/50 rounded-md font-medium text-foreground/80"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* External Link */}
+                    <div className="flex justify-end">
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-foreground/50 group-hover:text-foreground group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
                 </div>
