@@ -1,35 +1,86 @@
-# Nahuel-porfolio
+# 🚀 Portfolio – Nahuel Viera
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Portfolio personal como **Full Stack Developer** donde presento mis proyectos, tecnologías y experiencia en desarrollo web.
 
-## Built with v0
+## 👨‍💻 Sobre mí
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+Soy estudiante avanzado de la **Licenciatura en Informática** con experiencia práctica en desarrollo de aplicaciones web full stack.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_C0upaOviR8Nf7vcKkMmoNlZbrTl0)
+Me especializo en el desarrollo con **Angular y .NET**, creando aplicaciones modernas y aplicando buenas prácticas como arquitectura por capas y separación de responsabilidades.
 
-## Getting Started
+Actualmente estoy buscando mi **primera oportunidad profesional en el área IT**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## 🛠 Tecnologías utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend
+- Angular
+- TypeScript
+- Tailwind CSS
+- Angular Material
+- HTML
+- CSS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Backend
+- C#
+- .NET / ASP.NET Core
+- Entity Framework Core
+- REST APIs
 
-## Learn More
+### Bases de datos
+- SQL Server
+- PostgreSQL
 
-To learn more, take a look at the following resources:
+### Herramientas
+- Git
+- Docker
+- Swagger
+- Vercel
+- Railway
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+---
 
-<a href="https://v0.app/chat/api/kiro/clone/Nahuevp/Nahuel-porfolio" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+## 📂 Proyectos destacados
+
+### Tracklass
+Aplicación full stack orientada al seguimiento del progreso académico de estudiantes.
+
+Permite registrar actividades, visualizar métricas y organizar información académica mediante una interfaz clara.
+
+Tecnologías:
+- Angular
+- .NET Core
+- SQL Server
+
+---
+
+### Rento
+Aplicación web para la gestión y presentación de vehículos para alquiler.
+
+El proyecto se centra en el diseño de APIs con .NET y un frontend desarrollado en Angular.
+
+Tecnologías:
+- Angular
+- .NET Core
+- PostgreSQL
+
+---
+
+## 🌐 Demo
+
+El portfolio está disponible en:
+
+👉 **(aquí pondrás el link cuando deployes)**
+
+
+---
+
+## 📫 Contacto
+
+- LinkedIn: https://www.linkedin.com/in/nahuel-viera-porta
+- GitHub: https://github.com/Nahuevp
+
+---
+
+⭐ Si te interesa mi perfil o quieres conversar sobre oportunidades en desarrollo de software, no dudes en contactarme.
