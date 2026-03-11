@@ -73,13 +73,11 @@ El portfolio está disponible en:
 
 👉 **(aquí pondrás el link cuando deployes)**
 
-
 ---
 
 ## 📫 Contacto
 
 - LinkedIn: https://www.linkedin.com/in/nahuel-viera-porta
-- GitHub: https://github.com/Nahuevp
 
 ---
 

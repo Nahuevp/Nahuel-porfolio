@@ -119,59 +119,59 @@ const content = {
     },
 
     languages: {
-    title: 'Languages',
-    spanish: 'Spanish — Native',
-    english: 'English — B2 (ECCE Certification)',
-    englishDesc:
-      'Comfortable reading technical documentation and working with English resources in development environments.',
-  },
-
-  tech: {
-    title: 'Tech Stack',
-    backend: 'Backend',
-    frontend: 'Frontend',
-    databases: 'Databases',
-    tools: 'Tools',
-    learning: 'Learning',
-  },
-
-  projects: {
-    title: 'Featured Projects',
-
-    tracklass: {
-      name: 'Tracklass',
-      desc:
-        'Full stack application designed to track student learning progress. Built with Angular and .NET following clean architecture principles.',
+      title: 'Languages',
+      spanish: 'Spanish — Native',
+      english: 'English — B2 (ECCE Certification)',
+      englishDesc:
+        'Comfortable reading technical documentation and working with English resources in development environments.',
     },
 
-    rento: {
-      name: 'Rento',
-      desc:
-        'Web application focused on vehicle management and presentation for rental services. The project emphasizes backend architecture, database modeling and API design using .NET.',
+    tech: {
+      title: 'Tech Stack',
+      backend: 'Backend',
+      frontend: 'Frontend',
+      databases: 'Databases',
+      tools: 'Tools',
+      learning: 'Learning',
     },
 
-    technicalTest: {
-      name: 'StockApp',
-      desc:
-        'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
+    projects: {
+      title: 'Featured Projects',
+
+      tracklass: {
+        name: 'Tracklass',
+        desc:
+          'Full stack application designed to track student learning progress. Built with Angular and .NET following clean architecture principles.',
+      },
+
+      rento: {
+        name: 'Rento',
+        desc:
+          'Web application focused on vehicle management and presentation for rental services. The project emphasizes backend architecture, database modeling and API design using .NET.',
+      },
+
+      technicalTest: {
+        name: 'StockApp',
+        desc:
+          'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
+      },
+
+      portfolio: {
+        name: 'Personal Portfolio',
+        desc:
+          'Personal website built to showcase my projects, technologies and development journey. It also represents my first hands-on experience with the React ecosystem.',
+      },
     },
 
-    portfolio: {
-      name: 'Personal Portfolio',
-      desc:
-        'Personal website built to showcase my projects, technologies and development journey. It also represents my first hands-on experience with the React ecosystem.',
+    contact: {
+      title: 'Get In Touch',
+      subtitle:
+        'Always interested in hearing about new opportunities or interesting projects.',
     },
+
+    footer:
+      '© 2026 Nahuel Viera — Full Stack Developer (.NET & Angular)',
   },
-
-  contact: {
-    title: 'Get In Touch',
-    subtitle:
-      'Always interested in hearing about new opportunities or interesting projects.',
-  },
-
-  footer:
-    '© 2026 Nahuel Viera — Full Stack Developer (.NET & Angular)',
-},
 }
 
 const technologies = {
@@ -339,6 +339,9 @@ export default function Portfolio() {
             <a href="#about" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
               {language === 'es' ? 'Sobre mí' : 'About'}
             </a>
+            <a href="#tech" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
+              {language === 'es' ? 'Stack' : 'Stack'}
+            </a>
             <a href="#projects" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
               {language === 'es' ? 'Proyectos' : 'Projects'}
             </a>
@@ -463,7 +466,7 @@ export default function Portfolio() {
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition"
               >
                 <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-                Descargar CV
+                {language === 'es' ? 'Descargar CV' : 'Download CV'}
               </a>
 
               <a
@@ -500,6 +503,23 @@ export default function Portfolio() {
             <p>{t.about.text2}</p>
             <p>{t.about.text3}</p>
             <p className="font-medium text-foreground/90">{t.about.text4}</p>
+          </div>
+
+          {/* Education */}
+          <div className="mt-12 pt-12 border-t border-border">
+            <h3 className="text-2xl sm:text-3xl font-semibold mb-6">
+              {language === 'es' ? 'Educación' : 'Education'}
+            </h3>
+
+            <p className="text-base sm:text-lg text-foreground/80">
+              {language === 'es'
+                ? 'Licenciatura en Informática — Universidad de la Empresa (UDE)'
+                : "Bachelor's Degree in Computer Science — Universidad de la Empresa (UDE)"}
+            </p>
+
+            <p className="text-foreground/70">
+              {language === 'es' ? '2022 - Actualidad (Tesis en curso)' : '2022 — Present (Thesis in progress)'}
+            </p>
           </div>
 
           {/* Languages Section */}
@@ -766,7 +786,7 @@ export default function Portfolio() {
                           className="flex items-center gap-2 px-3 py-1.5 text-sm rounded-md border border-border bg-muted/40 hover:bg-muted transition"
                         >
                           <Github className="w-4 h-4" />
-                          Código
+                          {language === 'es' ? 'Código' : 'Code'}
                         </a>
                       )}
 
@@ -819,7 +839,7 @@ export default function Portfolio() {
               <input
                 name="name"
                 type="text"
-                placeholder="Nombre"
+                placeholder={language === 'es' ? 'Nombre' : 'Name'}
                 required
                 className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
               />
@@ -827,14 +847,14 @@ export default function Portfolio() {
               <input
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder={language === 'es' ? 'Correo' : 'Email'}
                 required
                 className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
               />
 
               <textarea
                 name="message"
-                placeholder="Mensaje"
+                placeholder={language === 'es' ? 'Mensaje' : 'Message'}
                 rows={4}
                 maxLength={1000}
                 required
@@ -845,7 +865,7 @@ export default function Portfolio() {
                 type="submit"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition"
               >
-                Enviar mensaje
+                {language === 'es' ? 'Enviar mensaje' : 'Send message'}
               </button>
 
             </form>
