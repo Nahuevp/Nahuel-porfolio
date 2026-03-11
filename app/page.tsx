@@ -461,12 +461,20 @@ export default function Portfolio() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
 
               <a
-                href="/cv/Nahuel-Viera-CV-FullStack.pdf"
-                download="Nahuel-Viera-CV-FullStack.pdf"
+                href={
+                  language === "es"
+                    ? "/cv/Nahuel-Viera-CV-Desarrollador-FullStack.pdf"
+                    : "/cv/Nahuel-Viera-CV-FullStack-Developer.pdf"
+                }
+                download={
+                  language === "es"
+                    ? "Nahuel-Viera-CV-Desarrollador-FullStack.pdf"
+                    : "Nahuel-Viera-CV-FullStack-Developer.pdf"
+                }
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition"
               >
                 <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-                {language === 'es' ? 'Descargar CV' : 'Download CV'}
+                {language === "es" ? "Descargar CV" : "Download CV"}
               </a>
 
               <a
