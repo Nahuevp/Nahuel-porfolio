@@ -711,21 +711,21 @@ export default function Portfolio() {
               {
                 key: "tracklass",
                 image: "/images/tracklass.png",
-                techs: ["Angular", ".NET Core", "SQL Server"],
+                techs: ["Angular", ".NET Core", "SQL Server", "Angular Material","Cloud deploy(Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/Tracklass",
-                demo: null
+                demo: "https://tracklass-five.vercel.app/dashboard"
               },
               {
                 key: "rento",
                 image: "/images/rento2.png",
-                techs: ["Angular", ".NET Core", "PostgreSQL"],
+                techs: ["Angular", ".NET Core", "PostgreSQL", "SCSS", "Cloud deploy(Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
               },
               {
                 key: "technicalTest",
                 image: "/images/stockapp.png",
-                techs: ["Angular", "Bootstrap"],
+                techs: ["Angular", "Bootstrap", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
                 demo: "https://prueba-tecnica-roan.vercel.app/"
               },
