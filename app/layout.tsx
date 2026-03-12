@@ -7,25 +7,13 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio de Nahuel Viera',
-  description: 'Nahuel Viera – Full Stack Developer focused on .NET and Angular. Building modern web applications and solving real problems through software.',
-  generator: 'v0.app',
+  title: 'Portfolio de Nahuel Viera | Full Stack Developer',
+  description: 'Nahuel Viera — Full Stack Developer focused on .NET',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: "/dragonball.jpg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/dragonball.jpg", sizes: "192x192", type: "image/jpeg" },
     ],
-    apple: '/apple-icon.png',
   },
 }
 
