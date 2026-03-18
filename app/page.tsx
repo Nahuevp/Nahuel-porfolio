@@ -203,7 +203,8 @@ const technologies = {
     { name: "Swagger", logo: "/icons/swagger.svg" },
     { name: "Azure", logo: "/icons/azure.svg" },
     { name: "Vercel", logo: "/icons/vercel.svg" },
-    { name: "Railway", logo: "/icons/railway.svg" }
+    { name: "Render", logo: "/icons/render.svg" },
+    { name: "Neon", logo: "/icons/neon.svg" }
   ],
 
   learning: [
