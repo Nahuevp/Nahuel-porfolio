@@ -426,7 +426,7 @@ export default function Portfolio() {
               {/* Imagen */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-white/10 shadow-2xl">
                 <Image
-                  src="/images/profile.webp"
+                  src="https://res.cloudinary.com/dclt3q5lo/image/upload/w_400,f_auto,q_auto/foto_nueva_cv_de_menor_tamaño_urxylx"
                   alt="Nahuel Viera"
                   fill
                   className="object-cover"
@@ -711,28 +711,28 @@ export default function Portfolio() {
             {[
               {
                 key: "tracklass",
-                image: "/images/tracklass.png",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
                 techs: ["Angular", ".NET Core", "PostgreSQL", "Angular Material","Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/Tracklass",
                 demo: "https://tracklass-five.vercel.app/dashboard"
               },
               {
                 key: "rento",
-                image: "/images/rento2.png",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/rento2_enuzvg.png",
                 techs: ["Angular", ".NET Core", "PostgreSQL", "SCSS", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
               },
               {
                 key: "technicalTest",
-                image: "/images/stockapp.png",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
                 techs: ["Angular", "Bootstrap", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
                 demo: "https://prueba-tecnica-roan.vercel.app/"
               },
               {
                 key: "portfolio",
-                image: "/images/porfolio.png",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/porfolio_onqyhi.png",
                 techs: ["React", "Tailwind", "Next.js"],
                 github: "https://github.com/Nahuevp/portfolio",
                 demo: null
