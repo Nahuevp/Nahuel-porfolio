@@ -15,6 +15,25 @@ export const metadata: Metadata = {
       { url: "/dragonball.jpg", sizes: "192x192", type: "image/jpeg" },
     ],
   },
+  openGraph: {
+    title: 'Nahuel Viera — Full Stack Developer',
+    description: 'Full Stack Developer specialized in .NET and Angular. Check out my projects and skills.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dclt3q5lo/image/upload/v1775202134/foto_banner_porfolio_qlal1u.png',
+        width: 1200,
+        height: 630,
+        alt: 'Nahuel Viera — Full Stack Developer Portfolio',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nahuel Viera — Full Stack Developer',
+    description: 'Full Stack Developer specialized in .NET and Angular. Check out my projects and skills.',
+    images: ['https://res.cloudinary.com/dclt3q5lo/image/upload/v1775202134/foto_banner_porfolio_qlal1u.png'],
+  },
 }
 
 export default function RootLayout({

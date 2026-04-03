@@ -56,6 +56,12 @@ const content = {
     projects: {
       title: 'Proyectos Destacados',
 
+      microservices: {
+        name: 'E-Commerce Microservices',
+        desc:
+          'Arquitectura de microservicios para un e-commerce con 8 servicios independientes (.NET 10), API Gateway con YARP, autenticación JWT, Saga pattern para checkout distribuido, Docker Compose y tests unitarios. Cada servicio con su propia base de datos PostgreSQL.',
+      },
+
       tracklass: {
         name: 'Tracklass',
         desc:
@@ -72,12 +78,6 @@ const content = {
         name: 'StockApp',
         desc:
           'Aplicación web desarrollada para gestionar productos y stock. Permite registrar artículos, visualizar listados con paginación y administrar información básica de inventario a través de una interfaz simple orientada a la gestión.',
-      },
-
-      portfolio: {
-        name: 'Mi Portfolio',
-        desc:
-          'Este sitio web fue desarrollado como mi portfolio profesional para presentar mis proyectos, tecnologías y experiencia como desarrollador. También representa mi primer acercamiento práctico al ecosistema de React.',
       },
     },
 
@@ -138,6 +138,12 @@ const content = {
     projects: {
       title: 'Featured Projects',
 
+      microservices: {
+        name: 'E-Commerce Microservices',
+        desc:
+          'Microservices architecture for an e-commerce with 8 independent services (.NET 10), YARP API Gateway, JWT authentication, Saga pattern for distributed checkout, Docker Compose and unit tests. Each service with its own PostgreSQL database.',
+      },
+
       tracklass: {
         name: 'Tracklass',
         desc:
@@ -154,12 +160,6 @@ const content = {
         name: 'StockApp',
         desc:
           'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
-      },
-
-      portfolio: {
-        name: 'Personal Portfolio',
-        desc:
-          'Personal website built to showcase my projects, technologies and development journey. It also represents my first hands-on experience with the React ecosystem.',
       },
     },
 
@@ -710,6 +710,13 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
+                key: "microservices",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
+                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "Saga Pattern", "xUnit"],
+                github: "https://github.com/Nahuevp/ecommerce-microservices",
+                demo: null
+              },
+              {
                 key: "tracklass",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
                 techs: ["Angular", ".NET Core", "PostgreSQL", "Angular Material","Cloud deploy (Neon, Render, Vercel)"],
@@ -729,13 +736,6 @@ export default function Portfolio() {
                 techs: ["Angular", "Bootstrap", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
                 demo: "https://prueba-tecnica-roan.vercel.app/"
-              },
-              {
-                key: "portfolio",
-                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/porfolio_onqyhi.png",
-                techs: ["React", "Tailwind", "Next.js"],
-                github: "https://github.com/Nahuevp/portfolio",
-                demo: null
               },
             ].map((project) => {
               const proj = t.projects[
