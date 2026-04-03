@@ -713,7 +713,7 @@ export default function Portfolio() {
                 key: "microservices",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
                 techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "Saga Pattern", "xUnit", "Cloud deploy (Neon, Render)"],
-                github: "https://github.com/Nahuevp/ecommerce-microservices",
+                github: "https://github.com/Nahuevp/E-Commerce-Microservices",
                 demo: "https://ecommerce-microservices-ow4d.onrender.com/"
               },
               {
