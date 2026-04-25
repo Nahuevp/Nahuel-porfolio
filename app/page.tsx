@@ -2,7 +2,7 @@
 
 import { Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import emailjs from "@emailjs/browser"
 import { Download } from "lucide-react"
 import { motion } from "framer-motion"
@@ -270,25 +270,41 @@ export default function Portfolio() {
 
   useEffect(() => {
     setMounted(true)
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setIsDark(prefersDark)
-    if (prefersDark) {
-      document.documentElement.classList.add('dark')
-    }
+    // Forzamos el modo oscuro por defecto porque la paleta resalta mejor
+    setIsDark(true)
+    document.documentElement.classList.add('dark')
   }, [])
 
   const [scrolled, setScrolled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [activeSection, setActiveSection] = useState('hero')
+  const [heroMouse, setHeroMouse] = useState({ x: 50, y: 50 })
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const scrollY = window.scrollY
+      setScrolled(scrollY > 50)
+      const doc = document.documentElement
+      setScrollProgress((scrollY / (doc.scrollHeight - doc.clientHeight)) * 100)
     }
-
     window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
+  useEffect(() => {
+    const ids = ['hero', 'about', 'tech', 'projects', 'contact']
+    const observers: IntersectionObserver[] = []
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
+        { threshold: 0.25 }
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+    return () => observers.forEach((o) => o.disconnect())
   }, [])
 
   const toggleTheme = () => {
@@ -302,22 +318,15 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground dark:bg-background dark:text-foreground">
-      {/* Animated Background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-background via-background to-muted/10 dark:to-muted/5">
-        {/* Top right glow */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/20 to-purple-600/20 dark:from-blue-500/30 dark:to-purple-500/30 rounded-full blur-3xl animate-soft-glow" />
-
-        {/* Bottom left glow */}
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-600/15 to-blue-600/15 dark:from-purple-500/25 dark:to-blue-500/25 rounded-full blur-3xl animate-soft-glow" style={{ animationDelay: '2s' }} />
-
-        {/* Center accent */}
-        <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-gradient-to-br from-blue-700/10 to-purple-700/10 dark:from-blue-600/20 dark:to-purple-600/20 rounded-full blur-3xl -translate-x-1/2 opacity-60" />
-
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style={{
-          backgroundImage: 'linear-gradient(0deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.1) calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.1) calc(100% - 1px))',
-          backgroundSize: '50px 50px'
-        }} />
+      {/* Scroll progress bar */}
+      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
+      {/* Noise grain texture */}
+      <div className="noise-overlay" />
+      {/* Animated background glows */}
+      <div className="bg-glow-container">
+        <div className="bg-glow-a" />
+        <div className="bg-glow-b" />
+        <div className="bg-glow-c" />
       </div>
 
       {/* Navigation */}
@@ -337,16 +346,16 @@ export default function Portfolio() {
             <img src="/flags/uy.svg" alt="Uruguay" className="w-4 h-4 sm:w-5 sm:h-5 rounded-sm shadow-sm" />
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
-            <a href="#about" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
+            <a href="#about" className={`nav-link hidden sm:inline ${activeSection === 'about' ? 'active' : ''}`}>
               {language === 'es' ? 'Sobre mí' : 'About'}
             </a>
-            <a href="#tech" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
+            <a href="#tech" className={`nav-link hidden sm:inline ${activeSection === 'tech' ? 'active' : ''}`}>
               {language === 'es' ? 'Stack' : 'Stack'}
             </a>
-            <a href="#projects" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
+            <a href="#projects" className={`nav-link hidden sm:inline ${activeSection === 'projects' ? 'active' : ''}`}>
               {language === 'es' ? 'Proyectos' : 'Projects'}
             </a>
-            <a href="#contact" className="text-xs sm:text-sm hover:opacity-70 transition-opacity hidden sm:inline">
+            <a href="#contact" className={`nav-link hidden sm:inline ${activeSection === 'contact' ? 'active' : ''}`}>
               {language === 'es' ? 'Contacto' : 'Contact'}
             </a>
             <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
@@ -399,32 +408,38 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="min-h-screen flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 relative overflow-hidden
-  bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.25),rgba(0,0,0,0)_60%)]"
+        className="min-h-screen flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 relative overflow-hidden"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect()
+          setHeroMouse({
+            x: ((e.clientX - rect.left) / rect.width) * 100,
+            y: ((e.clientY - rect.top) / rect.height) * 100,
+          })
+        }}
       >
-        {/* Background gradient */}
-        <div className="absolute inset-0 -z-10">
+        {/* Dot grid overlay */}
+        <div className="hero-dot-grid" />
 
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] blur-[120px]"
-            style={{
-              background:
-                "radial-gradient(circle at center, rgba(59,130,246,0.25) 0%, rgba(168,85,247,0.15) 40%, transparent 70%)"
-            }}
-          />
-
-        </div>
+        {/* Mouse spotlight - adapts to dark/light mode */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            background: isDark
+              ? `radial-gradient(700px circle at ${heroMouse.x}% ${heroMouse.y}%, rgba(16,185,129,0.10), transparent 55%)`
+              : `radial-gradient(700px circle at ${heroMouse.x}% ${heroMouse.y}%, rgba(16,185,129,0.20), transparent 55%)`
+          }}
+        />
 
         <div className="relative z-20 max-w-4xl mx-auto w-full">
           <div className="flex flex-col items-center text-center gap-8 sm:gap-10">
             {/* Profile Image */}
             <div className="relative w-52 h-52 sm:w-64 sm:h-64">
-
-              {/* Glow detrás */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl opacity-70" />
-
-              {/* Imagen */}
-              <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-white/10 shadow-2xl">
+              {/* Rotating gradient ring */}
+              <div className="profile-ring-spinner" />
+              {/* Background gap */}
+              <div className="profile-ring-mask" />
+              {/* Image */}
+              <div className="profile-ring-image">
                 <Image
                   src="https://res.cloudinary.com/dclt3q5lo/image/upload/w_400,f_auto,q_auto/foto_nueva_cv_de_menor_tamaño_urxylx"
                   alt="Nahuel Viera"
@@ -433,7 +448,6 @@ export default function Portfolio() {
                   priority
                 />
               </div>
-
             </div>
 
             {/* Content */}
@@ -450,7 +464,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight hero-title">
                 {t.hero.title}
               </h1>
               <p className="text-lg sm:text-xl text-foreground/80 text-balance leading-relaxed max-w-2xl mx-auto">
@@ -472,22 +486,22 @@ export default function Portfolio() {
                     ? "Nahuel-Viera-CV-Desarrollador-FullStack.pdf"
                     : "Nahuel-Viera-CV-FullStack-Developer.pdf"
                 }
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition"
+                className="hero-btn hero-btn-primary inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#10b981] hover:bg-[#059669] text-white rounded-lg font-medium"
               >
-                <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                <Download className="w-5 h-5 transition-transform group-hover:translate-y-1" />
                 {language === "es" ? "Descargar CV" : "Download CV"}
               </a>
 
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition-opacity"
+                className="hero-btn hero-btn-secondary inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90"
               >
                 {t.cta.work}
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-foreground/30 rounded-lg font-medium hover:bg-muted transition-colors"
+                className="hero-btn hero-btn-outline inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-foreground/30 rounded-lg font-medium hover:bg-muted"
               >
                 {t.cta.contact}
               </a>
@@ -496,6 +510,8 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* About Section */}
       <motion.section
@@ -506,7 +522,7 @@ export default function Portfolio() {
         viewport={{ once: true }}
         className="py-20 sm:py-32 px-4 sm:px-6 bg-muted/30 dark:bg-muted/5 relative">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-12">{t.about.title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.about.title}</h2>
           <div className="space-y-6 text-base sm:text-lg text-foreground/80 leading-relaxed">
             <p>{t.about.text1}</p>
             <p>{t.about.text2}</p>
@@ -562,6 +578,8 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
+      <div className="section-divider" />
+
       {/* Tech Stack Section */}
       <motion.section
         id="tech"
@@ -572,7 +590,7 @@ export default function Portfolio() {
         className="py-20 sm:py-32 px-4 sm:px-6 relative"
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-16">{t.tech.title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.tech.title}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
 
@@ -583,16 +601,14 @@ export default function Portfolio() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {technologies.backend.map((tech) => (
+                {technologies.backend.map((tech, i) => (
                   <span
                     key={tech.name}
-                    className="px-4 py-2 bg-muted/40 border border-border rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md transition-all duration-200 inline-flex items-center gap-3 font-medium"
+                    className="tech-badge"
+                    data-tech={tech.name}
+                    style={{ animationDelay: `${i * 0.07}s` }}
                   >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <img src={tech.logo} alt={tech.name} />
                     {tech.name}
                   </span>
                 ))}
@@ -606,16 +622,14 @@ export default function Portfolio() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {technologies.frontend.map((tech) => (
+                {technologies.frontend.map((tech, i) => (
                   <span
                     key={tech.name}
-                    className="px-4 py-2 bg-muted/40 border border-border rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md transition-all duration-200 inline-flex items-center gap-3 font-medium"
+                    className="tech-badge"
+                    data-tech={tech.name}
+                    style={{ animationDelay: `${i * 0.07}s` }}
                   >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-5 h-5 object-contain"
-                    />
+                    <img src={tech.logo} alt={tech.name} />
                     {tech.name}
                   </span>
                 ))}
@@ -629,16 +643,14 @@ export default function Portfolio() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {technologies.databases.map((tech) => (
+                {technologies.databases.map((tech, i) => (
                   <span
                     key={tech.name}
-                    className="px-4 py-2 bg-muted/40 border border-border rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md transition-all duration-200 inline-flex items-center gap-3 font-medium"
+                    className="tech-badge"
+                    data-tech={tech.name}
+                    style={{ animationDelay: `${i * 0.07}s` }}
                   >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-5 h-5 object-contain"
-                    />
+                    <img src={tech.logo} alt={tech.name} />
                     {tech.name}
                   </span>
                 ))}
@@ -652,16 +664,14 @@ export default function Portfolio() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {technologies.tools.map((tech) => (
+                {technologies.tools.map((tech, i) => (
                   <span
                     key={tech.name}
-                    className="px-4 py-2 bg-muted/40 border border-border rounded-lg text-sm sm:text-base hover:bg-muted/70 hover:scale-105 hover:shadow-md transition-all duration-200 inline-flex items-center gap-3 font-medium"
+                    className="tech-badge"
+                    data-tech={tech.name}
+                    style={{ animationDelay: `${i * 0.07}s` }}
                   >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-5 h-5 object-contain"
-                    />
+                    <img src={tech.logo} alt={tech.name} />
                     {tech.name}
                   </span>
                 ))}
@@ -675,16 +685,14 @@ export default function Portfolio() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {technologies.learning.map((tech) => (
+                {technologies.learning.map((tech, i) => (
                   <span
                     key={tech.name}
-                    className="px-4 py-2 bg-muted/40 border border-border rounded-lg text-sm sm:text-base opacity-80 hover:bg-muted/70 hover:scale-105 hover:shadow-md transition-all duration-200 inline-flex items-center gap-3 font-medium"
+                    className="tech-badge opacity-70"
+                    data-tech={tech.name}
+                    style={{ animationDelay: `${i * 0.07}s` }}
                   >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-5 h-5 object-contain"
-                    />
+                    <img src={tech.logo} alt={tech.name} />
                     {tech.name}
                   </span>
                 ))}
@@ -694,6 +702,8 @@ export default function Portfolio() {
           </div>
         </div>
       </motion.section>
+
+      <div className="section-divider" />
 
       {/* Projects Section */}
       <motion.section
@@ -705,7 +715,7 @@ export default function Portfolio() {
         className="py-20 sm:py-32 px-4 sm:px-6 bg-muted/30 dark:bg-muted/5"
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-16">{t.projects.title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.projects.title}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
@@ -745,7 +755,7 @@ export default function Portfolio() {
               return (
                 <div
                   key={project.key}
-                  className="group overflow-hidden rounded-xl border border-border bg-card/40 backdrop-blur-sm hover:border-blue-400/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                  className="glass-card group flex flex-col"
                 >
                   {/* Project Image */}
                   <div className="relative w-full h-48 overflow-hidden">
@@ -763,7 +773,7 @@ export default function Portfolio() {
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6 sm:p-8 flex flex-col flex-1">
+                  <div className="p-6 sm:p-8 flex flex-col flex-1 relative z-10">
                     <h3 className="text-lg sm:text-xl font-semibold mb-3">
                       {proj.name}
                     </h3>
@@ -820,6 +830,8 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
+      <div className="section-divider" />
+
       {/* Contact Section */}
       <motion.section
         id="contact"
@@ -830,7 +842,7 @@ export default function Portfolio() {
         className="py-20 sm:py-32 px-4 sm:px-6"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">{t.contact.title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 section-title">{t.contact.title}</h2>
           <p className="text-lg sm:text-xl text-foreground/70 mb-12 text-balance">
             {t.contact.subtitle}
           </p>
@@ -850,7 +862,7 @@ export default function Portfolio() {
                 type="text"
                 placeholder={language === 'es' ? 'Nombre' : 'Name'}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+                className="form-input"
               />
 
               <input
@@ -858,7 +870,7 @@ export default function Portfolio() {
                 type="email"
                 placeholder={language === 'es' ? 'Correo' : 'Email'}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+                className="form-input"
               />
 
               <textarea
@@ -867,12 +879,12 @@ export default function Portfolio() {
                 rows={4}
                 maxLength={1000}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+                className="form-input"
               />
 
               <button
                 type="submit"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition"
+                className="form-submit w-full"
               >
                 {language === 'es' ? 'Enviar mensaje' : 'Send message'}
               </button>
