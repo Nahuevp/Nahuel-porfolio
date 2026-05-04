@@ -74,6 +74,12 @@ const content = {
           'Aplicación web enfocada en la gestión y presentación de vehículos para alquiler. El proyecto se centra en la arquitectura backend, modelado de base de datos y diseño de APIs utilizando .NET junto con un frontend en Angular.',
       },
 
+      technicalTest: {
+        name: 'StockApp',
+        desc:
+          'Aplicación web desarrollada para gestionar productos y stock. Permite registrar artículos, visualizar listados con paginación y administrar información básica de inventario a través de una interfaz simple orientada a la gestión.',
+      },
+
       saas: {
         name: 'ConectaEmprendedores',
         desc:
@@ -154,6 +160,12 @@ const content = {
         name: 'Rento',
         desc:
           'Web application focused on vehicle management and presentation for rental services. The project emphasizes backend architecture, database modeling and API design using .NET.',
+      },
+
+      technicalTest: {
+        name: 'StockApp',
+        desc:
+          'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
       },
 
       saas: {
@@ -723,7 +735,6 @@ export default function Portfolio() {
                 key: "saas",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1777862100/586339e6-d8d1-4ab6-962d-0efa5d5296af.png",
                 techs: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS"],
-                github: "https://github.com/Nahuevp/conecta-emprendedores",
                 demo: "https://conecta-emprendedores.vercel.app/"
               },
               {
@@ -746,6 +757,13 @@ export default function Portfolio() {
                 techs: ["Angular", ".NET Core", "PostgreSQL", "SCSS", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
+              },
+              {
+                key: "technicalTest",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
+                techs: ["Angular", "Bootstrap", "Vercel"],
+                github: "https://github.com/Nahuevp/prueba-tecnica",
+                demo: "https://prueba-tecnica-roan.vercel.app/"
               },
             ].map((project) => {
               const proj = t.projects[
