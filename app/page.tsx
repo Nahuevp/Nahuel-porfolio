@@ -74,10 +74,10 @@ const content = {
           'Aplicación web enfocada en la gestión y presentación de vehículos para alquiler. El proyecto se centra en la arquitectura backend, modelado de base de datos y diseño de APIs utilizando .NET junto con un frontend en Angular.',
       },
 
-      technicalTest: {
-        name: 'StockApp',
+      saas: {
+        name: 'ConectaEmprendedores',
         desc:
-          'Aplicación web desarrollada para gestionar productos y stock. Permite registrar artículos, visualizar listados con paginación y administrar información básica de inventario a través de una interfaz simple orientada a la gestión.',
+          'Plataforma SaaS integral para la gestión de marketplaces locales. Desarrollé un ecosistema completo que incluye un panel administrativo para moderación, sistema de membresías/suscripciones para emprendedores, y flujos automatizados de contacto vía WhatsApp. El enfoque principal fue la escalabilidad y la experiencia del usuario (UX) tanto para el admin como para el vendedor.',
       },
     },
 
@@ -156,10 +156,10 @@ const content = {
           'Web application focused on vehicle management and presentation for rental services. The project emphasizes backend architecture, database modeling and API design using .NET.',
       },
 
-      technicalTest: {
-        name: 'StockApp',
+      saas: {
+        name: 'ConectaEmprendedores',
         desc:
-          'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
+          'Comprehensive SaaS platform for local marketplace management. Includes an administrative panel, subscription system for entrepreneurs, and automated WhatsApp contact flows. Focus on scalability, admin and vendor UX.',
       },
     },
 
@@ -720,6 +720,13 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
+                key: "saas",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1777862100/586339e6-d8d1-4ab6-962d-0efa5d5296af.png",
+                techs: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS"],
+                github: "https://github.com/Nahuevp/conecta-emprendedores",
+                demo: "https://conecta-emprendedores.vercel.app/"
+              },
+              {
                 key: "microservices",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
                 techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "Saga Pattern", "xUnit", "Cloud deploy (Neon, Render)"],
@@ -740,13 +747,6 @@ export default function Portfolio() {
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
               },
-              {
-                key: "technicalTest",
-                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
-                techs: ["Angular", "Bootstrap", "Vercel"],
-                github: "https://github.com/Nahuevp/prueba-tecnica",
-                demo: "https://prueba-tecnica-roan.vercel.app/"
-              },
             ].map((project) => {
               const proj = t.projects[
                 project.key as keyof typeof t.projects
@@ -755,28 +755,34 @@ export default function Portfolio() {
               return (
                 <div
                   key={project.key}
-                  className="glass-card group flex flex-col"
+                  className={`group flex flex-col ${project.key === 'saas' ? 'md:col-span-2 featured-saas-card' : 'glass-card'}`}
                 >
-                  {/* Project Image */}
-                  <div className="relative w-full h-48 overflow-hidden">
+                  <div className={project.key === 'saas' ? 'card-inner' : 'flex flex-col h-full'}>
+                    {/* Project Image */}
+                    <div className={`relative w-full overflow-hidden ${project.key === 'saas' ? 'h-64 sm:h-80' : 'h-48'}`}>
 
-                    <Image
-                      src={project.image}
-                      alt={project.key}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                      <Image
+                        src={project.image}
+                        alt={project.key}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
 
-                    {/* overlay */}
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+                      {/* overlay */}
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
 
-                  </div>
+                    </div>
 
-                  {/* Project Info */}
-                  <div className="p-6 sm:p-8 flex flex-col flex-1 relative z-10">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                      {proj.name}
-                    </h3>
+                    {/* Project Info */}
+                    <div className="p-6 sm:p-8 flex flex-col flex-1 relative z-10">
+                      {project.key === 'saas' && (
+                        <div className="badge-saas">
+                          SaaS Platform
+                        </div>
+                      )}
+                      <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                        {proj.name}
+                      </h3>
 
                     <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed flex-1">
                       {proj.desc}
