@@ -764,7 +764,7 @@ export default function Portfolio() {
                 key: "saas",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1778216711/5d81badb-715c-4a70-a661-bbdaf0bf4c46.png",
                 techs: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Resend"],
-                demo: "https://conecta-emprendedores.vercel.app/"
+                demo: "https://buscalo-uy.vercel.app/"
               },
               {
                 key: "microservices",
