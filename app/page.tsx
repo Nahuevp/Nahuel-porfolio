@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import emailjs from "@emailjs/browser"
@@ -49,8 +49,8 @@ const content = {
       backend: 'Backend',
       frontend: 'Frontend',
       databases: 'Bases de Datos',
-      tools: 'Herramientas',
-      learning: 'Aprendiendo',
+      tools: 'DevOps / Herramientas',
+      learning: 'Explorando',
     },
 
     projects: {
@@ -81,9 +81,9 @@ const content = {
       },
 
       saas: {
-        name: 'ConectaEmprendedores',
+        name: 'Buscaló',
         desc:
-          'Plataforma SaaS integral para la gestión de marketplaces locales. Desarrollé un ecosistema completo que incluye un panel administrativo para moderación, sistema de membresías/suscripciones para emprendedores, y flujos automatizados de contacto vía WhatsApp. El enfoque principal fue la escalabilidad y la experiencia del usuario (UX) tanto para el admin como para el vendedor.',
+          'Directorio centralizado de servicios y emprendimientos locales. Desarrollé una plataforma robusta que conecta a usuarios con emprendedores uruguayos, eliminando la fricción de búsqueda en redes sociales tradicionales. El sistema incluye un panel administrativo para moderación de contenido, gestión de membresías premium para negocios y un canal directo de contacto vía WhatsApp integrado para cada perfil. Diseñado con un enfoque en SEO y velocidad de carga extrema.',
       },
     },
 
@@ -137,8 +137,8 @@ const content = {
       backend: 'Backend',
       frontend: 'Frontend',
       databases: 'Databases',
-      tools: 'Tools',
-      learning: 'Learning',
+      tools: 'DevOps / Tools',
+      learning: 'Exploring',
     },
 
     projects: {
@@ -169,9 +169,9 @@ const content = {
       },
 
       saas: {
-        name: 'ConectaEmprendedores',
+        name: 'Buscaló',
         desc:
-          'Comprehensive SaaS platform for local marketplace management. Includes an administrative panel, subscription system for entrepreneurs, and automated WhatsApp contact flows. Focus on scalability, admin and vendor UX.',
+          'Centralized directory for local services and businesses. I developed a robust platform connecting users with Uruguayan entrepreneurs, eliminating the friction of searching on traditional social networks. The system includes an administrative panel for content moderation, premium membership management for businesses, and a direct WhatsApp contact channel integrated into each profile. Designed with a focus on SEO and extreme loading speed.',
       },
     },
 
@@ -216,11 +216,13 @@ const technologies = {
     { name: "Azure", logo: "/icons/azure.svg" },
     { name: "Vercel", logo: "/icons/vercel.svg" },
     { name: "Render", logo: "/icons/render.svg" },
-    { name: "Neon", logo: "/icons/neon.svg" }
+    { name: "Neon", logo: "/icons/neon.svg" },
+    { name: "Supabase", logo: "/icons/supabase-logo-icon.svg" }
   ],
 
   learning: [
-    { name: "React", logo: "/icons/react.svg" }
+    { name: "React", logo: "/icons/react.svg" },
+    { name: "Next.js", logo: "/icons/nextdotjs.svg" }
   ]
 }
 
@@ -464,17 +466,44 @@ export default function Portfolio() {
 
             {/* Content */}
             <div className="max-w-3xl">
-              <p className="text-lg sm:text-xl mb-4 text-foreground/70">
-                <span style={waveStyle} className="mr-2">👋</span>
-                <span className="text-foreground/80">{t.hero.greeting}</span>
-              </p>
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center justify-center mb-8"
+              >
+                <div className="relative group">
+                  {/* Ambient Glow */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 to-emerald-400/20 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                  
+                  {/* The Unified Capsule */}
+                  <div className="relative px-5 py-2 sm:px-7 sm:py-2.5 bg-muted/40 border border-foreground/10 rounded-full flex items-center gap-3 sm:gap-4 backdrop-blur-md">
+                    
+                    {/* Greeting Part */}
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 animate-pulse" />
+                      <span className="text-base sm:text-lg font-medium text-foreground/90 tracking-wide whitespace-nowrap">
+                        {t.hero.greeting}
+                      </span>
+                    </div>
 
-              <div className="flex justify-center mb-4">
-                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-medium">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                  {language === 'es' ? 'Disponible para trabajar' : 'Open to work'}
+                    {/* Elegant Separator */}
+                    <div className="h-4 w-px bg-foreground/15" />
+
+                    {/* Status Part */}
+                    <div className="flex items-center gap-2 whitespace-nowrap">
+                      <div className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </div>
+                      <span className="text-[10px] sm:text-xs font-bold text-green-500/90 uppercase tracking-wider">
+                        {language === 'es' ? 'Disponible' : 'Available'}
+                      </span>
+                    </div>
+
+                  </div>
                 </div>
-              </div>
+              </motion.div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight hero-title">
                 {t.hero.title}
@@ -733,8 +762,8 @@ export default function Portfolio() {
             {[
               {
                 key: "saas",
-                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1777862100/586339e6-d8d1-4ab6-962d-0efa5d5296af.png",
-                techs: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS"],
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1778216711/5d81badb-715c-4a70-a661-bbdaf0bf4c46.png",
+                techs: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Resend"],
                 demo: "https://conecta-emprendedores.vercel.app/"
               },
               {
@@ -783,7 +812,7 @@ export default function Portfolio() {
                         src={project.image}
                         alt={project.key}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
 
                       {/* overlay */}
