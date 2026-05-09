@@ -27,13 +27,13 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Soy estudiante avanzado de la Licenciatura en Informática con experiencia práctica en desarrollo de aplicaciones web full stack. Me enfoco en construir aplicaciones modernas utilizando Angular y .NET, aplicando buenas prácticas como arquitectura por capas y separación de responsabilidades.",
+      text1: "Soy estudiante avanzado de la Licenciatura en Informática orientado a la construcción de productos sólidos. Me especializo en el desarrollo Full Stack con Angular y .NET Core, diseñando arquitecturas escalables que priorizan el rendimiento y las buenas prácticas.",
 
-      text2: "He desarrollado proyectos personales donde trabajé con SPAs y APIs REST, participando en todo el ciclo de desarrollo: desde el diseño de la aplicación hasta su implementación y mejora continua.",
+      text2: "No me limito a escribir código; abordo el ciclo de vida completo del software. Desde el modelado de bases de datos y la creación de APIs REST o arquitecturas de Microservicios, hasta la implementación de interfaces de usuario modernas y el despliegue continuo en la nube.",
 
-      text3: "Disfruto resolver problemas a través del software, aprender nuevas tecnologías y trabajar en equipo para construir soluciones claras, mantenibles y escalables.",
+      text3: "A través de mis proyectos he construido y desplegado plataformas reales (como un SaaS o e-commerce distribuidos) resolviendo problemas de arquitectura, autenticación y despliegue. Me enfoco en entregar soluciones claras y mantenibles.",
 
-      text4: "Actualmente estoy buscando mi primera oportunidad profesional en el área IT, donde pueda seguir creciendo como desarrollador y aportar valor dentro de un equipo de desarrollo.",
+      text4: "Busco integrarme a un equipo de desarrollo profesional donde pueda aplicar este enfoque orientado a producto, seguir elevando mis estándares técnicos y aportar valor desde el primer día.",
     },
 
     languages: {
@@ -115,13 +115,13 @@ const content = {
     about: {
       title: "About me",
 
-      text1: "I am an advanced student of the Bachelor's Degree in Computer Science with hands-on experience in full stack web development. I focus on building modern applications using Angular and .NET while applying best practices such as layered architecture and separation of concerns.",
+      text1: "I am an advanced Computer Science student focused on building solid digital products. I specialize in Full Stack development with Angular and .NET Core, designing scalable architectures that prioritize performance and best practices.",
 
-      text2: "I have developed personal projects where I implemented SPAs and REST APIs, working through the entire development process — from application design to implementation and continuous improvement.",
+      text2: "I don't just write code; I handle the complete software lifecycle. From database modeling and creating REST APIs or Microservices architectures, to implementing modern user interfaces and managing continuous deployment in the cloud.",
 
-      text3: "I enjoy solving problems through software, learning new technologies and collaborating in team environments to build clear, maintainable and scalable solutions.",
+      text3: "Through my projects, I have built and deployed real-world platforms (like a SaaS and distributed e-commerce), solving complex architecture, authentication, and deployment challenges. My focus is on delivering clean, maintainable solutions.",
 
-      text4: "Currently, I am seeking my first professional opportunity in the IT industry where I can continue growing as a developer and contribute value within a development team."
+      text4: "I am looking to join a professional development team where I can apply this product-oriented mindset, continue raising my technical standards, and contribute value from day one."
     },
 
     languages: {
