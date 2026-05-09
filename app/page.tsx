@@ -14,7 +14,7 @@ const content = {
     nav: 'Nahuel Viera — Desarrollador de Software',
 
     hero: {
-      greeting: 'Hola, soy Nahuel.',
+      greeting: 'Hola, soy Nahuel',
       title: 'Desarrollador Full Stack',
       subtitle:
         'Especializado en .NET y Angular | construyendo aplicaciones web modernas y resolviendo problemas reales a través del software.',
@@ -101,7 +101,7 @@ const content = {
     nav: 'Nahuel Viera — Software Developer',
 
     hero: {
-      greeting: "Hey, I'm Nahuel.",
+      greeting: "Hey, I'm Nahuel",
       title: 'Full Stack Developer',
       subtitle:
         'Specialized in .NET and Angular — building modern web applications and solving real problems through software.',
