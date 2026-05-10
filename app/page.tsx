@@ -59,7 +59,7 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'Arquitectura de microservicios para un e-commerce con 8 servicios independientes (.NET 10), API Gateway con YARP, autenticación JWT, Saga pattern para checkout distribuido, Docker Compose y tests unitarios. Cada servicio con su propia base de datos PostgreSQL.',
+          'E-commerce full stack con arquitectura distribuida de 8 microservicios. El mayor desafío fue la orquestación en la nube: optimizamos el runtime de .NET para operar establemente en entornos de recursos limitados (512MB RAM) y desarrollamos un sistema de Warm-up Splash Screen para gestionar la resiliencia ante el cold start. Implementa Saga Pattern para la consistencia de datos, YARP como Gateway inteligente y seguridad centralizada con JWT y RBAC.',
       },
 
       tracklass: {
@@ -147,7 +147,7 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'Microservices architecture for an e-commerce with 8 independent services (.NET 10), YARP API Gateway, JWT authentication, Saga pattern for distributed checkout, Docker Compose and unit tests. Each service with its own PostgreSQL database.',
+          'Full-stack e-commerce with a distributed architecture of 8 microservices. The biggest challenge was cloud orchestration: we optimized the .NET runtime to operate stably in resource-constrained environments (512MB RAM) and developed a Warm-up Splash Screen system to manage resilience against cold start. It implements Saga Pattern for data consistency, YARP as an intelligent Gateway, and centralized security with JWT and RBAC.',
       },
 
       tracklass: {
@@ -769,7 +769,7 @@ export default function Portfolio() {
               {
                 key: "microservices",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
-                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "Saga Pattern", "xUnit", "Cloud deploy (Neon, Render)"],
+                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)", "Pulsetic (Monitoring)"],
                 github: "https://github.com/Nahuevp/E-Commerce-Microservices",
                 demo: "https://ecommerce-microservices-ow4d.onrender.com/"
               },
@@ -802,7 +802,7 @@ export default function Portfolio() {
               return (
                 <div
                   key={project.key}
-                  className={`group flex flex-col ${project.key === 'saas' ? 'md:col-span-2 featured-saas-card' : 'glass-card'}`}
+                  className={`group flex flex-col h-full ${project.key === 'saas' ? 'md:col-span-2 featured-saas-card' : 'glass-card sm:min-h-[650px]'}`}
                 >
                   <div className={project.key === 'saas' ? 'card-inner' : 'flex flex-col h-full'}>
                     {/* Project Image */}
