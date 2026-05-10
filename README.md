@@ -44,14 +44,15 @@ Actualmente estoy buscando mi **primera oportunidad profesional en el área IT**
 ## 📂 Proyectos destacados
 
 ### Tracklass
-Aplicación full stack orientada al seguimiento del progreso académico de estudiantes.
-
-Permite registrar actividades, visualizar métricas y organizar información académica mediante una interfaz clara.
+SaaS para gestión educativa y control financiero con motor analítico para la consolidación de ingresos y estados de deuda.
 
 Tecnologías:
-- Angular
-- .NET Core
-- SQL Server
+- Angular 20
+- .NET 8
+- PostgreSQL
+- Layered Architecture
+- WhatsApp API
+- CSR Reporting
 
 ---
 

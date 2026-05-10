@@ -65,7 +65,7 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Aplicación full stack orientada al seguimiento del progreso de aprendizaje de estudiantes. Permite registrar actividades, visualizar métricas y organizar información académica en una interfaz clara. Desarrollada con Angular y .NET aplicando una arquitectura limpia.',
+          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de un motor analítico sobre PostgreSQL para la consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación del procesamiento de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
       },
 
       rento: {
@@ -153,7 +153,7 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Full stack application designed to track student learning progress. Built with Angular and .NET following clean architecture principles.',
+          'Full-stack SaaS for educational management and financial control. The main technical challenge was designing an analytical engine on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating report generation (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
       },
 
       rento: {
@@ -776,7 +776,7 @@ export default function Portfolio() {
               {
                 key: "tracklass",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
-                techs: ["Angular", ".NET Core", "PostgreSQL", "Angular Material","Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/Tracklass",
                 demo: "https://tracklass-five.vercel.app/dashboard"
               },
