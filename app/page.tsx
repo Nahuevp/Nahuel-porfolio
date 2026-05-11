@@ -856,7 +856,7 @@ export default function Portfolio() {
                         {proj.name}
                       </h3>
 
-                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed min-h-[160px]">
+                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed min-h-[210px]">
                       {proj.desc}
                     </p>
 
