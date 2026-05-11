@@ -71,7 +71,7 @@ const content = {
       rento: {
         name: 'Rento',
         desc:
-          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET), permitiendo predecir disponibilidad futura de unidades. Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
+          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET) y mitigar el impacto del cold start mediante estrategias de pre-calentamiento de servicios en la capa gratuita de Render. Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
       },
 
       technicalTest: {
@@ -159,7 +159,7 @@ const content = {
       rento: {
         name: 'Rento',
         desc:
-          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) to predict future unit availability. It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
+          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) and mitigating cold start impact through service pre-warming strategies on Render\'s free tier. It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
       },
 
       technicalTest: {
@@ -287,6 +287,16 @@ export default function Portfolio() {
     // Forzamos el modo oscuro por defecto porque la paleta resalta mejor
     setIsDark(true)
     document.documentElement.classList.add('dark')
+
+    // Cold Start Mitigation: Wake up backends on Render
+    const backends = [
+      "https://ecommerce-microservices-ow4d.onrender.com/",
+      "https://rento-car-rental-app-backend.onrender.com"
+    ]
+    
+    backends.forEach(url => {
+      fetch(url, { mode: 'no-cors' }).catch(() => {})
+    })
   }, [])
 
   const [scrolled, setScrolled] = useState(false)
@@ -783,7 +793,7 @@ export default function Portfolio() {
               {
                 key: "rento",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/rento2_enuzvg.png",
-                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)", "Pulsetic (Monitoring)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
               },
