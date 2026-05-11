@@ -65,7 +65,7 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
+          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR), mitigando además el impacto del cold start en Render. Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
       },
 
       rento: {
@@ -153,7 +153,7 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
+          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR) and mitigating cold start impact on Render. Integrates automated WhatsApp notifications for dynamic activity tracking.',
       },
 
       rento: {
@@ -291,7 +291,8 @@ export default function Portfolio() {
     // Cold Start Mitigation: Wake up backends on Render
     const backends = [
       "https://ecommerce-microservices-ow4d.onrender.com/",
-      "https://rento-car-rental-app-backend.onrender.com/api/cars"
+      "https://rento-car-rental-app-backend.onrender.com/api/cars",
+      "https://tracklass.onrender.com"
     ]
     
     backends.forEach(url => {
@@ -786,7 +787,7 @@ export default function Portfolio() {
               {
                 key: "tracklass",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
-                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)", "Pulsetic (Monitoring)"],
                 github: "https://github.com/Nahuevp/Tracklass",
                 demo: "https://tracklass-five.vercel.app/dashboard"
               },
