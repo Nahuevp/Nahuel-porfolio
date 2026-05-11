@@ -291,7 +291,7 @@ export default function Portfolio() {
     // Cold Start Mitigation: Wake up backends on Render
     const backends = [
       "https://ecommerce-microservices-ow4d.onrender.com/",
-      "https://rento-car-rental-app-backend.onrender.com"
+      "https://rento-car-rental-app-backend.onrender.com/api/cars"
     ]
     
     backends.forEach(url => {
