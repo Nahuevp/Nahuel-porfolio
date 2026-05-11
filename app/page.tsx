@@ -14,6 +14,7 @@ const content = {
     nav: 'Nahuel Viera — Desarrollador de Software',
     common: {
       coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
+      optimizedNotice: 'Demo optimizada: Cold start mitigado mediante monitoreo activo 24/7.',
     },
 
     hero: {
@@ -104,6 +105,7 @@ const content = {
     nav: 'Nahuel Viera — Software Developer',
     common: {
       coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
+      optimizedNotice: 'Optimized demo: Cold start mitigated via active 24/7 monitoring.',
     },
 
     hero: {
@@ -788,7 +790,8 @@ export default function Portfolio() {
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
                 techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)", "Pulsetic (Monitoring)"],
                 github: "https://github.com/Nahuevp/E-Commerce-Microservices",
-                demo: "https://ecommerce-microservices-ow4d.onrender.com/"
+                demo: "https://ecommerce-microservices-ow4d.onrender.com/",
+                isOptimized: true
               },
               {
                 key: "tracklass",
@@ -858,6 +861,13 @@ export default function Portfolio() {
                       <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium">
                         <span className="animate-pulse">⚠️</span>
                         <span>{(t as any).common.coldStartNotice}</span>
+                      </div>
+                    )}
+
+                    {(project as any).isOptimized && (
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] sm:text-xs font-medium">
+                        <span>✅</span>
+                        <span>{(t as any).common.optimizedNotice}</span>
                       </div>
                     )}
 
