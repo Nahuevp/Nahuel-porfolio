@@ -15,6 +15,7 @@ const content = {
     common: {
       coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
       optimizedNotice: 'Demo optimizada: Cold start mitigado mediante monitoreo activo 24/7.',
+      instantNotice: 'Carga instantánea: Aplicación puramente frontend (SPA) sin demoras de servidor.',
     },
 
     hero: {
@@ -106,6 +107,7 @@ const content = {
     common: {
       coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
       optimizedNotice: 'Optimized demo: Cold start mitigated via active 24/7 monitoring.',
+      instantNotice: 'Instant load: Pure frontend application (SPA) with no server delays.',
     },
 
     hero: {
@@ -814,7 +816,8 @@ export default function Portfolio() {
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
                 techs: ["Angular", "Reactive State", "Local Storage", "Bootstrap", "UX Design", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
-                demo: "https://prueba-tecnica-roan.vercel.app/"
+                demo: "https://prueba-tecnica-roan.vercel.app/",
+                isInstant: true
               },
             ].map((project) => {
               const proj = t.projects[
@@ -868,6 +871,13 @@ export default function Portfolio() {
                       <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] sm:text-xs font-medium">
                         <span>✅</span>
                         <span>{(t as any).common.optimizedNotice}</span>
+                      </div>
+                    )}
+
+                    {(project as any).isInstant && (
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] sm:text-xs font-medium">
+                        <span>⚡</span>
+                        <span>{(t as any).common.instantNotice}</span>
                       </div>
                     )}
 
