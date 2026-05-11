@@ -71,13 +71,13 @@ const content = {
       rento: {
         name: 'Rento',
         desc:
-          'Aplicación web enfocada en la gestión y presentación de vehículos para alquiler. El proyecto se centra en la arquitectura backend, modelado de base de datos y diseño de APIs utilizando .NET junto con un frontend en Angular.',
+          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El mayor desafío fue la implementación de una lógica de colisiones de fechas en el backend (.NET), permitiendo predecir la disponibilidad futura de cada unidad. Aplica Service-Oriented Architecture (SOA) y un set de pruebas unitarias que garantizan la integridad de las transacciones de reserva.',
       },
 
       technicalTest: {
         name: 'StockApp',
         desc:
-          'Aplicación web desarrollada para gestionar productos y stock. Permite registrar artículos, visualizar listados con paginación y administrar información básica de inventario a través de una interfaz simple orientada a la gestión.',
+          'Aplicación de gestión de inventario reactiva desarrollada como prueba técnica de alto rendimiento. Se enfoca en la gestión de estado local (In-Memory State Management) con validaciones avanzadas para prevenir duplicidad de datos. Presenta una interfaz minimalista construida con Bootstrap, priorizando la UX y la velocidad de interacción del usuario.',
       },
 
       saas: {
@@ -159,13 +159,13 @@ const content = {
       rento: {
         name: 'Rento',
         desc:
-          'Web application focused on vehicle management and presentation for rental services. The project emphasizes backend architecture, database modeling and API design using .NET.',
+          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) to predict future availability for each vehicle. It follows Service-Oriented Architecture (SOA) principles and includes a suite of unit tests to ensure the integrity of booking transactions.',
       },
 
       technicalTest: {
         name: 'StockApp',
         desc:
-          'Web application created to manage products and inventory. Allows registering items, displaying paginated lists and managing stock information through a simple interface.',
+          'Reactive inventory management application developed as a high-performance technical test. It focuses on in-memory state management with advanced validations to prevent data duplication. Features a minimalist interface built with Bootstrap, prioritizing UX and user interaction speed.',
       },
 
       saas: {
@@ -783,14 +783,14 @@ export default function Portfolio() {
               {
                 key: "rento",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/rento2_enuzvg.png",
-                techs: ["Angular", ".NET Core", "PostgreSQL", "SCSS", "Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/"
               },
               {
                 key: "technicalTest",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
-                techs: ["Angular", "Bootstrap", "Vercel"],
+                techs: ["Angular", "Reactive State", "Local Storage", "Bootstrap", "UX Design", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
                 demo: "https://prueba-tecnica-roan.vercel.app/"
               },
