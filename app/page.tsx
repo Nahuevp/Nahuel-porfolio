@@ -59,19 +59,19 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'E-commerce full stack con arquitectura distribuida de 8 microservicios. El mayor desafío fue la orquestación en la nube: optimizamos el runtime de .NET para operar establemente en entornos de recursos limitados (512MB RAM) y desarrollamos un sistema de Warm-up Splash Screen para gestionar la resiliencia ante el cold start. Implementa Saga Pattern para la consistencia de datos, YARP como Gateway inteligente y seguridad centralizada con JWT y RBAC.',
+          'E-commerce full stack basado en una arquitectura distribuida de 8 microservicios. El principal desafío fue optimizar el consumo de recursos en entornos cloud limitados (512MB RAM) y mitigar el impacto del cold start en servicios serverless. Implementa Saga Pattern para garantizar consistencia de datos, YARP como API Gateway y seguridad centralizada mediante JWT y RBAC.',
       },
 
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de un motor analítico sobre PostgreSQL para la consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación del procesamiento de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
+          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El mayor desafío fue la implementación de una lógica de colisiones de fechas en el backend (.NET), permitiendo predecir la disponibilidad futura de cada unidad. Aplica Service-Oriented Architecture (SOA) y un set de pruebas unitarias que garantizan la integridad de las transacciones de reserva.',
+          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET), permitiendo predecir disponibilidad futura de unidades. Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
       },
 
       technicalTest: {
@@ -147,19 +147,19 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'Full-stack e-commerce with a distributed architecture of 8 microservices. The biggest challenge was cloud orchestration: we optimized the .NET runtime to operate stably in resource-constrained environments (512MB RAM) and developed a Warm-up Splash Screen system to manage resilience against cold start. It implements Saga Pattern for data consistency, YARP as an intelligent Gateway, and centralized security with JWT and RBAC.',
+          'Full-stack e-commerce based on a distributed architecture of 8 microservices. The main challenge was optimizing resource consumption in constrained cloud environments (512MB RAM) and mitigating cold start impact in serverless services. It implements Saga Pattern to guarantee data consistency, YARP as an API Gateway, and centralized security through JWT and RBAC.',
       },
 
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Full-stack SaaS for educational management and financial control. The main technical challenge was designing an analytical engine on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating report generation (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
+          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) to predict future availability for each vehicle. It follows Service-Oriented Architecture (SOA) principles and includes a suite of unit tests to ensure the integrity of booking transactions.',
+          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) to predict future unit availability. It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
       },
 
       technicalTest: {
