@@ -12,6 +12,9 @@ type Language = 'es' | 'en'
 const content = {
   es: {
     nav: 'Nahuel Viera — Desarrollador de Software',
+    common: {
+      coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
+    },
 
     hero: {
       greeting: 'Hola, soy Nahuel',
@@ -65,13 +68,13 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR), mitigando además el impacto del cold start en Render. Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
+          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET) y mitigar el impacto del cold start mediante estrategias de pre-calentamiento de servicios en la capa gratuita de Render. Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
+          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET). Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
       },
 
       technicalTest: {
@@ -99,6 +102,9 @@ const content = {
 
   en: {
     nav: 'Nahuel Viera — Software Developer',
+    common: {
+      coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
+    },
 
     hero: {
       greeting: "Hey, I'm Nahuel",
@@ -153,13 +159,13 @@ const content = {
       tracklass: {
         name: 'Tracklass',
         desc:
-          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR) and mitigating cold start impact on Render. Integrates automated WhatsApp notifications for dynamic activity tracking.',
+          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET) and mitigating cold start impact through service pre-warming strategies on Render\'s free tier. It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
+          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET). It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
       },
 
       technicalTest: {
@@ -782,21 +788,24 @@ export default function Portfolio() {
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
                 techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)", "Pulsetic (Monitoring)"],
                 github: "https://github.com/Nahuevp/E-Commerce-Microservices",
-                demo: "https://ecommerce-microservices-ow4d.onrender.com/"
+                demo: "https://ecommerce-microservices-ow4d.onrender.com/",
+                isFreeTier: true
               },
               {
                 key: "tracklass",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
-                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)", "Pulsetic (Monitoring)"],
+                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/Tracklass",
-                demo: "https://tracklass-five.vercel.app/dashboard"
+                demo: "https://tracklass-five.vercel.app/dashboard",
+                isFreeTier: true
               },
               {
                 key: "rento",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/rento2_enuzvg.png",
-                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)", "Pulsetic (Monitoring)"],
+                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
-                demo: "https://rento-car-rental-app.vercel.app/"
+                demo: "https://rento-car-rental-app.vercel.app/",
+                isFreeTier: true
               },
               {
                 key: "technicalTest",
@@ -845,6 +854,13 @@ export default function Portfolio() {
                     <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed flex-1">
                       {proj.desc}
                     </p>
+
+                    {(project as any).isFreeTier && (
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium">
+                        <span className="animate-pulse">⚠️</span>
+                        <span>{(t as any).common.coldStartNotice}</span>
+                      </div>
+                    )}
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
