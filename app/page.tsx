@@ -861,21 +861,21 @@ export default function Portfolio() {
                     </p>
 
                     {(project as any).isFreeTier && (
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium">
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium min-h-[44px]">
                         <span className="animate-pulse">⚠️</span>
                         <span>{(t as any).common.coldStartNotice}</span>
                       </div>
                     )}
 
                     {(project as any).isOptimized && (
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] sm:text-xs font-medium">
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] sm:text-xs font-medium min-h-[44px]">
                         <span>✅</span>
                         <span>{(t as any).common.optimizedNotice}</span>
                       </div>
                     )}
 
                     {(project as any).isInstant && (
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] sm:text-xs font-medium">
+                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] sm:text-xs font-medium min-h-[44px]">
                         <span>⚡</span>
                         <span>{(t as any).common.instantNotice}</span>
                       </div>
