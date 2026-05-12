@@ -645,7 +645,7 @@ export default function Portfolio() {
                         {t.languages.english}
                       </p>
                     </div>
-                    <p className="text-sm text-foreground/60 ml-8 leading-relaxed">
+                    <p className="text-sm text-foreground/70 ml-8 mt-1 leading-relaxed">
                       {t.languages.englishDesc}
                     </p>
                   </div>
