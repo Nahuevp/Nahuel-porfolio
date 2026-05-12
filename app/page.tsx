@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles, Copy, Check } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles, Copy, Check, GraduationCap } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import emailjs from "@emailjs/browser"
@@ -46,7 +46,7 @@ const content = {
       spanish: 'Español — Nativo',
       english: 'Inglés — Nivel B2 (Certificación ECCE)',
       englishDesc:
-        'Puedo leer documentación técnica, comunicarme en entornos de desarrollo y trabajar con recursos en inglés sin problemas.',
+        'Lectura técnica y comunicación fluida en entornos de desarrollo.',
     },
 
     tech: {
@@ -140,7 +140,7 @@ const content = {
       spanish: 'Spanish — Native',
       english: 'English — B2 (ECCE Certification)',
       englishDesc:
-        'Comfortable reading technical documentation and working with English resources in development environments.',
+        'Technical documentation reading and fluent communication in dev environments.',
     },
 
     tech: {
@@ -598,54 +598,54 @@ export default function Portfolio() {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
             {/* Narrative Column */}
-            <div className="lg:col-span-2 space-y-8 text-lg sm:text-xl text-foreground/80 leading-relaxed">
+            <div className="lg:col-span-2 space-y-6 text-base sm:text-lg text-foreground/80 leading-relaxed">
               <p>{t.about.text1}</p>
               <p>{t.about.text2}</p>
               <p>{t.about.text3}</p>
-              <p className="font-medium text-foreground/90 text-xl sm:text-2xl">{t.about.text4}</p>
+              <p className="font-medium text-foreground/90 text-lg sm:text-xl">{t.about.text4}</p>
             </div>
 
             {/* Formal Data Column (Education & Languages) */}
-            <div className="space-y-12">
+            <div className="space-y-10">
               {/* Education */}
-              <div className="glass-card p-8 border-l-4 border-l-[#10b981]">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                  <Sparkles className="w-6 h-6 text-[#10b981]" />
+              <div className="glass-card p-6 sm:p-7 border-l-4 border-l-[#10b981]">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <GraduationCap className="w-5 h-5 text-[#10b981]" />
                   {language === 'es' ? 'Educación' : 'Education'}
                 </h3>
-                <div className="space-y-3">
-                  <p className="text-lg font-semibold text-foreground/90 leading-tight">
+                <div className="space-y-2">
+                  <p className="text-base font-semibold text-foreground/90 leading-tight">
                     {language === 'es'
                       ? 'Licenciatura en Informática — Universidad de la Empresa (UDE)'
                       : "Bachelor's Degree in Computer Science — Universidad de la Empresa (UDE)"}
                   </p>
-                  <p className="text-base text-foreground/60">
+                  <p className="text-sm text-foreground/60">
                     {language === 'es' ? '2022 - Actualidad (Tesis en curso)' : '2022 — Present (Thesis in progress)'}
                   </p>
                 </div>
               </div>
 
               {/* Languages */}
-              <div className="glass-card p-8 border-l-4 border-l-blue-500">
-                <h3 className="text-2xl font-bold mb-8">
+              <div className="glass-card p-6 sm:p-7 border-l-4 border-l-blue-500">
+                <h3 className="text-xl font-bold mb-6">
                   {t.languages.title}
                 </h3>
-                <div className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <img src="/flags/es.svg" alt="Español" className="w-6 h-6 rounded-sm shadow-sm" />
-                    <p className="text-lg text-foreground/80 font-medium">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <img src="/flags/es.svg" alt="Español" className="w-5 h-5 rounded-sm shadow-sm" />
+                    <p className="text-base text-foreground/80 font-medium">
                       {t.languages.spanish}
                     </p>
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-4 mb-3">
-                      <img src="/flags/gb.svg" alt="English" className="w-6 h-6 rounded-sm shadow-sm" />
-                      <p className="text-lg text-foreground/80 font-medium">
+                    <div className="flex items-center gap-3 mb-2">
+                      <img src="/flags/gb.svg" alt="English" className="w-5 h-5 rounded-sm shadow-sm" />
+                      <p className="text-base text-foreground/80 font-medium">
                         {t.languages.english}
                       </p>
                     </div>
-                    <p className="text-base text-foreground/60 ml-10 leading-relaxed">
+                    <p className="text-sm text-foreground/60 ml-8 leading-relaxed">
                       {t.languages.englishDesc}
                     </p>
                   </div>
