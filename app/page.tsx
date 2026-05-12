@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles, Copy, Check } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import emailjs from "@emailjs/browser"
@@ -96,6 +96,7 @@ const content = {
       title: 'Ponte en contacto',
       subtitle:
         'Siempre estoy interesado en escuchar sobre nuevas oportunidades o proyectos interesantes.',
+      email: 'bnZpZXJhODQxQGdtYWlsLmNvbQ==', // Base64 protected
     },
 
     footer:
@@ -189,6 +190,7 @@ const content = {
       title: 'Get In Touch',
       subtitle:
         'Always interested in hearing about new opportunities or interesting projects.',
+      email: 'bnZpZXJhODQxQGdtYWlsLmNvbQ==', // Base64 protected
     },
 
     footer:
@@ -240,6 +242,7 @@ export default function Portfolio() {
   const [isDark, setIsDark] = useState(true)
   const [language, setLanguage] = useState<Language>('es')
   const [mounted, setMounted] = useState(false)
+  const [emailCopied, setEmailCopied] = useState(false)
   const waveStyle = {
     display: "inline-block",
     transformOrigin: "70% 70%",
@@ -289,6 +292,13 @@ export default function Portfolio() {
     } catch (error) {
       alert("Error al enviar el mensaje. Intenta nuevamente.")
     }
+  }
+
+  const handleCopyEmail = () => {
+    const decodedEmail = atob(t.contact.email)
+    navigator.clipboard.writeText(decodedEmail)
+    setEmailCopied(true)
+    setTimeout(() => setEmailCopied(false), 2000)
   }
 
 
@@ -583,58 +593,64 @@ export default function Portfolio() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="py-20 sm:py-32 px-4 sm:px-6 bg-muted/30 dark:bg-muted/5 relative">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.about.title}</h2>
-          <div className="space-y-6 text-base sm:text-lg text-foreground/80 leading-relaxed">
-            <p>{t.about.text1}</p>
-            <p>{t.about.text2}</p>
-            <p>{t.about.text3}</p>
-            <p className="font-medium text-foreground/90">{t.about.text4}</p>
-          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+            {/* Narrative Column */}
+            <div className="lg:col-span-2 space-y-6 text-base sm:text-lg text-foreground/80 leading-relaxed">
+              <p>{t.about.text1}</p>
+              <p>{t.about.text2}</p>
+              <p>{t.about.text3}</p>
+              <p className="font-medium text-foreground/90">{t.about.text4}</p>
+            </div>
 
-          {/* Education */}
-          <div className="mt-12 pt-12 border-t border-border">
-            <h3 className="text-2xl sm:text-3xl font-semibold mb-6">
-              {language === 'es' ? 'Educación' : 'Education'}
-            </h3>
-
-            <p className="text-base sm:text-lg text-foreground/80">
-              {language === 'es'
-                ? 'Licenciatura en Informática — Universidad de la Empresa (UDE)'
-                : "Bachelor's Degree in Computer Science — Universidad de la Empresa (UDE)"}
-            </p>
-
-            <p className="text-foreground/70">
-              {language === 'es' ? '2022 - Actualidad (Tesis en curso)' : '2022 — Present (Thesis in progress)'}
-            </p>
-          </div>
-
-          {/* Languages Section */}
-          <div className="mt-12 pt-12 border-t border-border">
-            <h3 className="text-2xl sm:text-3xl font-semibold mb-6">{t.languages.title}</h3>
-
-            <div className="space-y-4">
-
-              <div className="flex items-center gap-3">
-                <img src="/flags/es.svg" alt="Español" className="w-5 h-5 rounded-sm" />
-                <p className="text-base sm:text-lg text-foreground/80">
-                  {t.languages.spanish}
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <img src="/flags/gb.svg" alt="English" className="w-5 h-5 rounded-sm" />
-                  <p className="text-base sm:text-lg text-foreground/80">
-                    {t.languages.english}
+            {/* Formal Data Column (Education & Languages) */}
+            <div className="space-y-12">
+              {/* Education */}
+              <div className="glass-card p-6 border-l-4 border-l-[#10b981]">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-[#10b981]" />
+                  {language === 'es' ? 'Educación' : 'Education'}
+                </h3>
+                <div className="space-y-2">
+                  <p className="text-base font-semibold text-foreground/90 leading-tight">
+                    {language === 'es'
+                      ? 'Licenciatura en Informática — Universidad de la Empresa (UDE)'
+                      : "Bachelor's Degree in Computer Science — Universidad de la Empresa (UDE)"}
+                  </p>
+                  <p className="text-sm text-foreground/60">
+                    {language === 'es' ? '2022 - Actualidad (Tesis en curso)' : '2022 — Present (Thesis in progress)'}
                   </p>
                 </div>
-
-                <p className="text-base sm:text-lg text-foreground/70 ml-8">
-                  {t.languages.englishDesc}
-                </p>
               </div>
 
+              {/* Languages */}
+              <div className="glass-card p-6 border-l-4 border-l-blue-500">
+                <h3 className="text-xl font-bold mb-6">
+                  {t.languages.title}
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <img src="/flags/es.svg" alt="Español" className="w-5 h-5 rounded-sm shadow-sm" />
+                    <p className="text-base text-foreground/80 font-medium">
+                      {t.languages.spanish}
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <img src="/flags/gb.svg" alt="English" className="w-5 h-5 rounded-sm shadow-sm" />
+                      <p className="text-base text-foreground/80 font-medium">
+                        {t.languages.english}
+                      </p>
+                    </div>
+                    <p className="text-sm text-foreground/60 ml-8 leading-relaxed">
+                      {t.languages.englishDesc}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -947,32 +963,26 @@ export default function Portfolio() {
             {t.contact.subtitle}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-            <form onSubmit={sendEmail} className="max-w-xl mx-auto space-y-4">
-
-              {/* Honeypot anti bots */}
-              <input
-                type="text"
-                name="company"
-                className="hidden"
-              />
-
-              <input
-                name="name"
-                type="text"
-                placeholder={language === 'es' ? 'Nombre' : 'Name'}
-                required
-                className="form-input"
-              />
-
-              <input
-                name="email"
-                type="email"
-                placeholder={language === 'es' ? 'Correo' : 'Email'}
-                required
-                className="form-input"
-              />
-
+          <div className="flex flex-col gap-12 items-center">
+            {/* Form */}
+            <form onSubmit={sendEmail} className="w-full max-w-xl space-y-4">
+              <input type="text" name="company" className="hidden" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder={language === 'es' ? 'Nombre' : 'Name'}
+                  required
+                  className="form-input"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder={language === 'es' ? 'Correo' : 'Email'}
+                  required
+                  className="form-input"
+                />
+              </div>
               <textarea
                 name="message"
                 placeholder={language === 'es' ? 'Mensaje' : 'Message'}
@@ -981,33 +991,50 @@ export default function Portfolio() {
                 required
                 className="form-input"
               />
-
-              <button
-                type="submit"
-                className="form-submit w-full"
-              >
+              <button type="submit" className="form-submit w-full">
                 {language === 'es' ? 'Enviar mensaje' : 'Send message'}
               </button>
-
             </form>
-            <a
-              href="https://github.com/Nahuevp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 border border-foreground/30 rounded-lg font-medium hover:bg-muted transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nahuel-viera-porta-518077281"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 border border-foreground/30 rounded-lg font-medium hover:bg-muted transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-              LinkedIn
-            </a>
+
+            <div className="w-full max-w-2xl">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 items-center">
+                {/* Email Copy Button (Social Style) */}
+                <button
+                  onClick={handleCopyEmail}
+                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card group relative"
+                >
+                  {emailCopied ? (
+                    <Check className="w-5 h-5 text-[#10b981]" />
+                  ) : (
+                    <Mail className="w-5 h-5" />
+                  )}
+                  <span className="min-w-[100px]">
+                    {emailCopied 
+                      ? (language === 'es' ? '¡Copiado!' : 'Copied!') 
+                      : (language === 'es' ? 'Copiar Email' : 'Copy Email')}
+                  </span>
+                </button>
+
+                <a
+                  href="https://github.com/Nahuevp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card"
+                >
+                  <Github className="w-5 h-5" />
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nahuel-viera-porta-518077281"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
