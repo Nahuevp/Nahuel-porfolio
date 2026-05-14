@@ -16,6 +16,7 @@ const content = {
       coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
       optimizedNotice: 'Demo optimizada: Cold start mitigado mediante monitoreo activo 24/7.',
       instantNotice: 'Carga instantánea: Aplicación puramente frontend (SPA) sin demoras de servidor.',
+      warmedUpNotice: 'Servidores activos: La demo cargará instantáneamente.',
     },
 
     hero: {
@@ -109,6 +110,7 @@ const content = {
       coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
       optimizedNotice: 'Optimized demo: Cold start mitigated via active 24/7 monitoring.',
       instantNotice: 'Instant load: Pure frontend application (SPA) with no server delays.',
+      warmedUpNotice: 'Servers active: The demo will load instantly.',
     },
 
     hero: {
@@ -243,6 +245,7 @@ export default function Portfolio() {
   const [language, setLanguage] = useState<Language>('es')
   const [mounted, setMounted] = useState(false)
   const [emailCopied, setEmailCopied] = useState(false)
+  const [isWarmingUp, setIsWarmingUp] = useState(true)
   const waveStyle = {
     display: "inline-block",
     transformOrigin: "70% 70%",
@@ -318,6 +321,12 @@ export default function Portfolio() {
     backends.forEach(url => {
       fetch(url, { mode: 'no-cors' }).catch(() => {})
     })
+
+    const timer = setTimeout(() => {
+      setIsWarmingUp(false)
+    }, 30000)
+
+    return () => clearTimeout(timer)
   }, [])
 
   const [scrolled, setScrolled] = useState(false)
@@ -877,10 +886,17 @@ export default function Portfolio() {
                     </p>
 
                     {(project as any).isFreeTier && (
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium min-h-[60px]">
-                        <span className="animate-pulse flex-shrink-0">⚠️</span>
-                        <span>{(t as any).common.coldStartNotice}</span>
-                      </div>
+                      isWarmingUp ? (
+                        <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] sm:text-xs font-medium min-h-[60px]">
+                          <span className="animate-pulse flex-shrink-0">⚠️</span>
+                          <span>{(t as any).common.coldStartNotice}</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 mb-4 p-2 rounded-md bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] sm:text-xs font-medium min-h-[60px]">
+                          <span className="flex-shrink-0">✅</span>
+                          <span>{(t as any).common.warmedUpNotice}</span>
+                        </div>
+                      )
                     )}
 
                     {(project as any).isOptimized && (
