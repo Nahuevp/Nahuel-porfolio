@@ -1057,7 +1057,8 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="border-t border-border py-8 px-4 sm:px-6 bg-muted/20 dark:bg-muted/5">
-        <div className="max-w-6xl mx-auto text-center text-sm text-foreground/50">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-foreground/50">
+          <img src="/favicon-nv.png" alt="Logo" className="w-5 h-5 grayscale opacity-50" />
           <p>{t.footer}</p>
         </div>
       </footer>
