@@ -16,7 +16,7 @@ const content = {
       coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
       optimizedNotice: 'Demo optimizada: Cold start mitigado mediante monitoreo activo 24/7.',
       instantNotice: 'Carga instantánea: Aplicación puramente frontend (SPA) sin demoras de servidor.',
-      warmedUpNotice: 'Servidores activos: La demo cargará instantáneamente.',
+      warmedUpNotice: 'Servicios activos: La demo cargará instantáneamente.',
     },
 
     hero: {
@@ -110,7 +110,7 @@ const content = {
       coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
       optimizedNotice: 'Optimized demo: Cold start mitigated via active 24/7 monitoring.',
       instantNotice: 'Instant load: Pure frontend application (SPA) with no server delays.',
-      warmedUpNotice: 'Servers active: The demo will load instantly.',
+      warmedUpNotice: 'Services active: The demo will load instantly.',
     },
 
     hero: {
