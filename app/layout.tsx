@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description: 'Nahuel Viera — Full Stack Developer focused on .NET',
   icons: {
     icon: [
-      { url: "/dragonball.jpg", sizes: "32x32", type: "image/jpeg" },
-      { url: "/dragonball.jpg", sizes: "192x192", type: "image/jpeg" },
+      { url: "/favicon-nv.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-nv.png", sizes: "192x192", type: "image/png" },
     ],
   },
   openGraph: {
