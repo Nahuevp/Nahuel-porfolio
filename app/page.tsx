@@ -33,7 +33,7 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Soy estudiante avanzado de la Licenciatura en Informática orientado a la construcción de productos sólidos. Me especializo en el desarrollo Full Stack con Angular y .NET Core, diseñando arquitecturas escalables que priorizan el rendimiento y las buenas prácticas.",
+      text1: "Estudiante avanzado de Licenciatura en Informática con fuerte base técnica en el ecosistema .NET y Angular. Apasionado por la arquitectura de software y las buenas prácticas, con experiencia práctica en el desarrollo de aplicaciones monolíticas y microservicios mediante proyectos personales. Me destaco por mi capacidad de análisis y mi enfoque en crear soluciones mantenibles, robustas y eficientes.",
 
       text2: "No me limito a escribir código; abordo el ciclo de vida completo del software. Desde el modelado de bases de datos y la creación de APIs REST o arquitecturas de Microservicios, hasta la implementación de interfaces de usuario modernas y el despliegue continuo en la nube.",
 
@@ -128,7 +128,7 @@ const content = {
     about: {
       title: "About me",
 
-      text1: "I am an advanced Computer Science student focused on building solid digital products. I specialize in Full Stack development with Angular and .NET Core, designing scalable architectures that prioritize performance and best practices.",
+      text1: "Advanced Computer Science student with a strong technical foundation in the .NET and Angular ecosystem. Passionate about software architecture and best practices, with practical experience in developing monolithic and microservices applications through personal projects. I stand out for my analytical capacity and my focus on creating maintainable, robust, and efficient solutions.",
 
       text2: "I don't just write code; I handle the complete software lifecycle. From database modeling and creating REST APIs or Microservices architectures, to implementing modern user interfaces and managing continuous deployment in the cloud.",
 
@@ -211,6 +211,7 @@ const technologies = {
   frontend: [
     { name: "Angular", logo: "/icons/angular.svg" },
     { name: "TypeScript", logo: "/icons/typescript.svg" },
+    { name: "JavaScript", logo: "/icons/javascript.svg" },
     { name: "Angular Material", logo: "/icons/angularmaterial.svg" },
     { name: "Bootstrap", logo: "/icons/bootstrap.svg" },
     { name: "Tailwind CSS", logo: "/icons/tailwind.svg" },
