@@ -81,9 +81,9 @@ const content = {
       },
 
       technicalTest: {
-        name: 'StockApp',
+        name: 'AssetFlow Enterprise',
         desc:
-          'Aplicación de gestión de inventario reactiva desarrollada como prueba técnica de alto rendimiento. Se enfoca en la gestión de estado local (In-Memory State Management) con validaciones avanzadas para prevenir duplicidad de datos. Presenta una interfaz minimalista construida con Bootstrap, priorizando la UX y la velocidad de interacción del usuario.',
+          'Plataforma de gestión de activos empresariales (SAM) de alto rendimiento. El proyecto evolucionó de una prueba técnica a un Case Study de nivel senior, implementando una arquitectura reactiva basada en Angular Signals y Tailwind v4. Se destaca por un motor de cálculo de valor de inventario en tiempo real, validaciones asíncronas y un diseño orientado a dashboards corporativos de alta fidelidad.',
       },
 
       saas: {
@@ -176,9 +176,9 @@ const content = {
       },
 
       technicalTest: {
-        name: 'StockApp',
+        name: 'AssetFlow Enterprise',
         desc:
-          'Reactive inventory management application developed as a high-performance technical test. It focuses on in-memory state management with advanced validations to prevent data duplication. Features a minimalist interface built with Bootstrap, prioritizing UX and user interaction speed.',
+          'High-performance Enterprise Asset Management (SAM) platform. The project evolved from a technical test into a senior-level Case Study, implementing a reactive architecture based on Angular Signals and Tailwind v4. It features a real-time inventory value calculation engine, asynchronous validations, and a design tailored for high-fidelity corporate dashboards.',
       },
 
       saas: {
@@ -839,8 +839,8 @@ export default function Portfolio() {
               },
               {
                 key: "technicalTest",
-                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/stockapp_qebmyo.png",
-                techs: ["Angular", "Reactive State", "Local Storage", "Bootstrap", "UX Design", "Vercel"],
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1778917922/d0c132fd-9736-4175-ab91-66d297809dba.png",
+                techs: ["Angular 20", "Signals", "Tailwind v4", "Reactive State", "Vercel"],
                 github: "https://github.com/Nahuevp/prueba-tecnica",
                 demo: "https://prueba-tecnica-roan.vercel.app/",
                 isInstant: true
