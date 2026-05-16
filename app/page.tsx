@@ -81,9 +81,9 @@ const content = {
       },
 
       technicalTest: {
-        name: 'AssetFlow Enterprise',
+        name: 'Nexus Inventory',
         desc:
-          'Plataforma de gestión de activos empresariales (SAM) de alto rendimiento. El proyecto evolucionó de una prueba técnica a un Case Study de nivel senior, implementando una arquitectura reactiva basada en Angular Signals y Tailwind v4. Se destaca por un motor de cálculo de valor de inventario en tiempo real, validaciones asíncronas y un diseño orientado a dashboards corporativos de alta fidelidad.',
+          'Sistema de gestión de inventario que inicié como una prueba técnica y decidí refactorizar por completo para aplicar conocimientos avanzados. Implementé una arquitectura reactiva con Angular Signals y un rediseño total estilo SaaS, transformando una herramienta simple en un panel de control empresarial con métricas de valor real y alto rendimiento.',
       },
 
       saas: {
@@ -176,9 +176,9 @@ const content = {
       },
 
       technicalTest: {
-        name: 'AssetFlow Enterprise',
+        name: 'Nexus Inventory',
         desc:
-          'High-performance Enterprise Asset Management (SAM) platform. The project evolved from a technical test into a senior-level Case Study, implementing a reactive architecture based on Angular Signals and Tailwind v4. It features a real-time inventory value calculation engine, asynchronous validations, and a design tailored for high-fidelity corporate dashboards.',
+          'Inventory management system that started as a technical test and I decided to fully refactor to apply advanced knowledge. I implemented a reactive architecture with Angular Signals and a total SaaS-style redesign, transforming a simple tool into an enterprise dashboard with real value metrics and high performance.',
       },
 
       saas: {
