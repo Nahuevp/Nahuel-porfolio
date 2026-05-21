@@ -56,7 +56,7 @@ const content = {
       frontend: 'Frontend',
       databases: 'Bases de Datos',
       tools: 'DevOps / Herramientas',
-      learning: 'Explorando',
+      learning: 'Ampliando stack',
     },
 
     projects: {
@@ -151,7 +151,7 @@ const content = {
       frontend: 'Frontend',
       databases: 'Databases',
       tools: 'DevOps / Tools',
-      learning: 'Exploring',
+      learning: 'Expanding stack',
     },
 
     projects: {
