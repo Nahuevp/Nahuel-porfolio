@@ -33,13 +33,13 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Estudiante avanzado de Licenciatura en Informática con fuerte base técnica en el ecosistema .NET y Angular. Apasionado por la arquitectura de software y las buenas prácticas, con experiencia práctica en el desarrollo de aplicaciones monolíticas y microservicios mediante proyectos personales. Me destaco por mi capacidad de análisis y mi enfoque en crear soluciones mantenibles, robustas y eficientes.",
+      text1: "Soy estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. Mi enfoque principal es el desarrollo Full Stack utilizando .NET, Angular y PostgreSQL/SQL Server, y también cuento con experiencia práctica construyendo aplicaciones modernas con React y Next.js. Busco desarrollar soluciones mantenibles, eficientes y bien estructuradas.",
 
-      text2: "No me limito a escribir código; abordo el ciclo de vida completo del software. Desde el modelado de bases de datos y la creación de APIs REST o arquitecturas de Microservicios, hasta la implementación de interfaces de usuario modernas y el despliegue continuo en la nube.",
+      text2: "Para mí, el desarrollo no termina en la escritura de código; me interesa comprender el ciclo de vida completo de una aplicación. Disfruto especialmente trabajar en el diseño de APIs REST, el modelado de datos, la lógica de negocio y la organización del software, además de la integración de interfaces modernas. A través de proyectos personales y académicos, he trabajado en aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, estructura de aplicaciones y despliegues básicos en la nube.",
 
-      text3: "A través de mis proyectos he construido y desplegado plataformas reales (como un SaaS o e-commerce distribuidos) resolviendo problemas de arquitectura, autenticación y despliegue. Me enfoco en entregar soluciones claras y mantenibles.",
+      text3: "Además, integro herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para optimizar productividad, aprendizaje y desarrollo de soluciones.",
 
-      text4: "Busco integrarme a un equipo de desarrollo profesional donde pueda aplicar este enfoque orientado a producto, seguir elevando mis estándares técnicos y aportar valor desde el primer día.",
+      text4: "Actualmente busco mi primera oportunidad profesional en IT como desarrollador, donde pueda aportar mi capacidad analítica, seguir creciendo técnicamente y ganar experiencia en proyectos de impacto real.",
     },
 
     languages: {

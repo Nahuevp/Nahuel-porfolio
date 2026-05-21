@@ -4,11 +4,13 @@ Portfolio personal como **Full Stack Developer** donde presento mis proyectos, t
 
 ## 👨‍💻 Sobre mí
 
-Soy estudiante avanzado de la **Licenciatura en Informática** con experiencia práctica en desarrollo de aplicaciones web full stack.
+Soy estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. Mi enfoque principal es el desarrollo Full Stack utilizando .NET, Angular y PostgreSQL/SQL Server, y también cuento con experiencia práctica construyendo aplicaciones modernas con React y Next.js. Busco desarrollar soluciones mantenibles, eficientes y bien estructuradas.
 
-Me especializo en el desarrollo con **Angular y .NET**, creando aplicaciones modernas y aplicando buenas prácticas como arquitectura por capas y separación de responsabilidades.
+Para mí, el desarrollo no termina en la escritura de código; me interesa comprender el ciclo de vida completo de una aplicación. Disfruto especialmente trabajar en el diseño de APIs REST, el modelado de datos, la lógica de negocio y la organización del software, además de la integración de interfaces modernas. A través de proyectos personales y académicos, he trabajado en aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, estructura de aplicaciones y despliegues básicos en la nube.
 
-Actualmente estoy buscando mi **primera oportunidad profesional en el área IT**.
+Además, integro herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para optimizar productividad, aprendizaje y desarrollo de soluciones.
+
+Actualmente busco mi primera oportunidad profesional en IT como desarrollador, donde pueda aportar mi capacidad analítica, seguir creciendo técnicamente y ganar experiencia en proyectos de impacto real.
 
 ---
 
