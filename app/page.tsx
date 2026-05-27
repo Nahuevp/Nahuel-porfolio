@@ -87,9 +87,9 @@ const content = {
       },
 
       saas: {
-        name: 'Buscaló',
+        name: 'Buscaló – Plataforma SaaS de Conexión de Negocios',
         desc:
-          'Directorio centralizado de servicios y emprendimientos locales. Desarrollé una plataforma robusta que conecta a usuarios con emprendedores uruguayos, eliminando la fricción de búsqueda en redes sociales tradicionales. El sistema incluye un panel administrativo para moderación de contenido, gestión de membresías premium para negocios y un canal directo de contacto vía WhatsApp integrado para cada perfil. Diseñado con un enfoque en SEO y velocidad de carga extrema.',
+          'Plataforma web SaaS de alto rendimiento diseñada para conectar usuarios con emprendedores y servicios locales. Desarrollada con arquitectura Server-First en Next.js 16 y Supabase, elimina la fricción en la búsqueda y contratación directa a través de integraciones ágiles de WhatsApp y redes sociales. El sistema incluye un panel de administración robusto para moderación en tiempo real, suscripciones con planes de membresía premium, analíticas de conversión de leads y búsqueda inteligente optimizada en base de datos.',
       },
     },
 
@@ -182,9 +182,9 @@ const content = {
       },
 
       saas: {
-        name: 'Buscaló',
+        name: 'Buscaló – SaaS Business Connection Platform',
         desc:
-          'Centralized directory for local services and businesses. I developed a robust platform connecting users with Uruguayan entrepreneurs, eliminating the friction of searching on traditional social networks. The system includes an administrative panel for content moderation, premium membership management for businesses, and a direct WhatsApp contact channel integrated into each profile. Designed with a focus on SEO and extreme loading speed.',
+          'High-performance SaaS web platform designed to connect users with local entrepreneurs and services. Developed using a Server-First architecture with Next.js 16 and Supabase, it eliminates friction in searching and direct hiring through agile WhatsApp and social media integrations. The system features a robust admin panel for real-time moderation, premium membership subscription plans, lead conversion analytics, and database-optimized smart search.',
       },
     },
 
