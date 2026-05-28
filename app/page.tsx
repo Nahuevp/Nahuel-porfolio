@@ -816,10 +816,10 @@ export default function Portfolio() {
               {
                 key: "microservices",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
-                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)", "Pulsetic (Monitoring)"],
+                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)"],
                 github: "https://github.com/Nahuevp/E-Commerce-Microservices",
                 demo: "https://ecommerce-microservices-ow4d.onrender.com/",
-                isOptimized: true
+                isFreeTier: true
               },
               {
                 key: "tracklass",
