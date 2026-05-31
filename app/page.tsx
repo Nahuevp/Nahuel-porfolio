@@ -560,12 +560,12 @@ export default function Portfolio() {
               <a
                 href={
                   language === "es"
-                    ? "/cv/Nahuel-Viera-CV-Desarrollador-FullStack.pdf"
+                    ? "/cv/Nahuel_Viera_Software_Developer_CV.pdf"
                     : "/cv/Nahuel-Viera-CV-FullStack-Developer.pdf"
                 }
                 download={
                   language === "es"
-                    ? "Nahuel-Viera-CV-Desarrollador-FullStack.pdf"
+                    ? "Nahuel_Viera_Software_Developer_CV.pdf"
                     : "Nahuel-Viera-CV-FullStack-Developer.pdf"
                 }
                 className="hero-btn hero-btn-primary inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#10b981] hover:bg-[#059669] text-white rounded-lg font-medium"
