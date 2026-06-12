@@ -21,9 +21,9 @@ const content = {
 
     hero: {
       greeting: 'Hola, soy Nahuel',
-      title: 'Desarrollador Full Stack',
+      title: 'Software Developer',
       subtitle:
-        'Especializado en .NET y Angular | construyendo aplicaciones web modernas y resolviendo problemas reales a través del software.',
+        'Especializado en .NET, Angular, React y Next.js | Construyendo aplicaciones web modernas y resolviendo problemas reales a través del software, con foco en rendimiento, mantenibilidad y experiencia de usuario.',
     },
 
     cta: {
@@ -33,13 +33,13 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Soy estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. Mi enfoque principal es el desarrollo Full Stack utilizando .NET, Angular y PostgreSQL/SQL Server, y también cuento con experiencia práctica construyendo aplicaciones modernas con React y Next.js. Busco desarrollar soluciones mantenibles, eficientes y bien estructuradas.",
+      text1: "Soy estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. Mi enfoque principal es el desarrollo de software utilizando .NET, Angular y PostgreSQL/SQL Server, y también cuento con experiencia práctica construyendo aplicaciones modernas con React y Next.js. Busco desarrollar soluciones mantenibles, eficientes y bien estructuradas.",
 
       text2: "Para mí, el desarrollo no termina en la escritura de código; me interesa comprender el ciclo de vida completo de una aplicación. Disfruto especialmente trabajar en el diseño de APIs REST, el modelado de datos, la lógica de negocio y la organización del software, además de la integración de interfaces modernas. A través de proyectos personales y académicos, he trabajado en aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, estructura de aplicaciones y despliegues básicos en la nube.",
 
-      text3: "Además, integro herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para optimizar productividad, aprendizaje y desarrollo de soluciones.",
+      text3: "Además, integro herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para optimizar la productividad, el aprendizaje y el desarrollo de soluciones.",
 
-      text4: "Actualmente busco mi primera oportunidad profesional en IT como desarrollador, donde pueda aportar mi capacidad analítica, seguir creciendo técnicamente y ganar experiencia en proyectos de impacto real.",
+      text4: "Actualmente busco mi primera oportunidad profesional en IT como Software Developer, donde pueda aportar mi capacidad analítica, seguir creciendo técnicamente y ganar experiencia en proyectos de impacto real.",
     },
 
     languages: {
@@ -101,7 +101,7 @@ const content = {
     },
 
     footer:
-      '© 2026 Nahuel Viera — Full Stack Developer (.NET & Angular)',
+      '© 2026 Nahuel Viera — Software Developer',
   },
 
   en: {
@@ -115,9 +115,9 @@ const content = {
 
     hero: {
       greeting: "Hey, I'm Nahuel",
-      title: 'Full Stack Developer',
+      title: 'Software Developer',
       subtitle:
-        'Specialized in .NET and Angular — building modern web applications and solving real problems through software.',
+        'Specialized in .NET, Angular, React, and Next.js — building modern web applications and solving real-world problems through software, focusing on performance, maintainability, and user experience.',
     },
 
     cta: {
@@ -196,7 +196,7 @@ const content = {
     },
 
     footer:
-      '© 2026 Nahuel Viera — Full Stack Developer (.NET & Angular)',
+      '© 2026 Nahuel Viera — Software Developer',
   },
 }
 
