@@ -89,7 +89,7 @@ const content = {
       saas: {
         name: 'Buscaló – Plataforma SaaS de Conexión de Negocios',
         desc:
-          'Plataforma web SaaS de alto rendimiento diseñada para conectar usuarios con emprendedores y servicios locales. Desarrollada con arquitectura Server-First en Next.js 16 y Supabase, elimina la fricción en la búsqueda y contratación directa a través de integraciones ágiles de WhatsApp y redes sociales. El sistema incluye un panel de administración robusto para moderación en tiempo real, suscripciones con planes de membresía premium, analíticas de conversión de leads y búsqueda inteligente optimizada en base de datos.',
+          'Plataforma web SaaS de alto rendimiento diseñada para conectar usuarios con emprendedores y servicios locales. Desarrollada con arquitectura Server-First en Next.js 16 y Supabase, aprovecha el renderizado híbrido (SSR/ISR) para una indexación SEO óptima y tiempos de carga instantáneos, eliminando la fricción en la búsqueda y contratación directa a través de integraciones ágiles de WhatsApp y redes sociales. El sistema incluye un panel de administración robusto para moderación en tiempo real, suscripciones con planes de membresía premium, analíticas de conversión de leads y búsqueda inteligente optimizada en base de datos.',
       },
     },
 
@@ -184,7 +184,7 @@ const content = {
       saas: {
         name: 'Buscaló – SaaS Business Connection Platform',
         desc:
-          'High-performance SaaS web platform designed to connect users with local entrepreneurs and services. Developed using a Server-First architecture with Next.js 16 and Supabase, it eliminates friction in searching and direct hiring through agile WhatsApp and social media integrations. The system features a robust admin panel for real-time moderation, premium membership subscription plans, lead conversion analytics, and database-optimized smart search.',
+          'High-performance SaaS web platform designed to connect users with local entrepreneurs and services. Developed using a Server-First architecture with Next.js 16 and Supabase, it leverages hybrid rendering (SSR/ISR) for optimal SEO indexing and instant load times, eliminating friction in searching and direct hiring through agile WhatsApp and social media integrations. The system features a robust admin panel for real-time moderation, premium membership subscription plans, lead conversion analytics, and database-optimized smart search.',
       },
     },
 
