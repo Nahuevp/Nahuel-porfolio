@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio de Nahuel Viera | Full Stack Developer',
-  description: 'Nahuel Viera — Full Stack Developer focused on .NET',
+  title: 'Portfolio de Nahuel Viera | Software Developer',
+  description: 'Nahuel Viera — Software Developer focused on .NET',
   icons: {
     icon: [
       { url: "/favicon-nv.png", sizes: "32x32", type: "image/png" },
@@ -23,22 +23,22 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Nahuel Viera — Full Stack Developer',
-    description: 'Full Stack Developer specialized in .NET and Angular. Check out my projects and skills.',
+    title: 'Nahuel Viera — Software Developer',
+    description: 'Software Developer specialized in .NET and Angular. Check out my projects and skills.',
     images: [
       {
         url: 'https://res.cloudinary.com/dclt3q5lo/image/upload/v1775202134/foto_banner_porfolio_qlal1u.png',
         width: 1200,
         height: 630,
-        alt: 'Nahuel Viera — Full Stack Developer Portfolio',
+        alt: 'Nahuel Viera — Software Developer Portfolio',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nahuel Viera — Full Stack Developer',
-    description: 'Full Stack Developer specialized in .NET and Angular. Check out my projects and skills.',
+    title: 'Nahuel Viera — Software Developer',
+    description: 'Software Developer specialized in .NET and Angular. Check out my projects and skills.',
     images: ['https://res.cloudinary.com/dclt3q5lo/image/upload/v1775202134/foto_banner_porfolio_qlal1u.png'],
   },
 }

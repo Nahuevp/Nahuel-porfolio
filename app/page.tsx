@@ -809,7 +809,7 @@ export default function Portfolio() {
             {[
               {
                 key: "saas",
-                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1778216711/5d81badb-715c-4a70-a661-bbdaf0bf4c46.png",
+                image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1781630694/725b9bc1-72d4-425a-b8d7-965bd64e0b6d.png",
                 techs: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Resend"],
                 demo: "https://buscalo-uy.vercel.app/"
               },
