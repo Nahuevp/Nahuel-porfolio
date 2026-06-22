@@ -33,13 +33,13 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Soy estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. Mi enfoque principal es el desarrollo de software utilizando .NET, Angular y PostgreSQL/SQL Server, y también cuento con experiencia práctica construyendo aplicaciones modernas con React y Next.js. Busco desarrollar soluciones mantenibles, eficientes y bien estructuradas.",
+      text1: "Soy un estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. He desarrollado aplicaciones web utilizando tecnologías como .NET, Angular, React, Next.js y Supabase, adaptándome a las necesidades de cada proyecto y buscando construir soluciones mantenibles, eficientes y bien estructuradas.",
 
-      text2: "Para mí, el desarrollo no termina en la escritura de código; me interesa comprender el ciclo de vida completo de una aplicación. Disfruto especialmente trabajar en el diseño de APIs REST, el modelado de datos, la lógica de negocio y la organización del software, además de la integración de interfaces modernas. A través de proyectos personales y académicos, he trabajado en aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, estructura de aplicaciones y despliegues básicos en la nube.",
+      text2: "Me interesa comprender el ciclo de vida completo de una aplicación, desde el diseño de APIs REST y el modelado de datos hasta la lógica de negocio, la arquitectura y la integración de interfaces modernas.",
 
-      text3: "Además, integro herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para optimizar la productividad, el aprendizaje y el desarrollo de soluciones.",
+      text3: "A través de diversos proyectos académicos y personales, entre ellos Buscaló, he desarrollado aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, integración de APIs, organización del software y despliegues básicos en la nube.",
 
-      text4: "Actualmente busco mi primera oportunidad profesional en IT como Software Developer, donde pueda aportar mi capacidad analítica, seguir creciendo técnicamente y ganar experiencia en proyectos de impacto real.",
+      text4: "Además, incorporo herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para potenciar la productividad y el desarrollo de soluciones.",
     },
 
     languages: {
@@ -128,13 +128,13 @@ const content = {
     about: {
       title: "About me",
 
-      text1: "Advanced Computer Science student with a strong technical foundation in the .NET and Angular ecosystem. Passionate about software architecture and best practices, with practical experience in developing monolithic and microservices applications through personal projects. I stand out for my analytical capacity and my focus on creating maintainable, robust, and efficient solutions.",
+      text1: "I am an advanced Computer Science student, passionate about software engineering and problem-solving. I have developed web applications using technologies such as .NET, Angular, React, Next.js, and Supabase, adapting to the needs of each project and aiming to build maintainable, efficient, and well-structured solutions.",
 
-      text2: "I don't just write code; I handle the complete software lifecycle. From database modeling and creating REST APIs or Microservices architectures, to implementing modern user interfaces and managing continuous deployment in the cloud.",
+      text2: "I am interested in understanding the complete application lifecycle, from REST API design and data modeling to business logic, architecture, and the integration of modern interfaces.",
 
-      text3: "Through my projects, I have built and deployed real-world platforms (like a SaaS and distributed e-commerce), solving complex architecture, authentication, and deployment challenges. My focus is on delivering clean, maintainable solutions.",
+      text3: "Through various academic and personal projects, including Buscaló, I have developed SaaS and e-commerce applications, tackling challenges related to authentication, API integration, software organization, and basic cloud deployments.",
 
-      text4: "I am looking to join a professional development team where I can apply this product-oriented mindset, continue raising my technical standards, and contribute value from day one."
+      text4: "Additionally, I incorporate Artificial Intelligence and automation tools into my workflow to boost productivity and solution development."
     },
 
     languages: {
