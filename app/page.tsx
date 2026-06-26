@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles, Copy, Check, GraduationCap } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sparkles, Copy, Check, GraduationCap, Code, Languages, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import emailjs from "@emailjs/browser"
@@ -11,7 +11,7 @@ type Language = 'es' | 'en'
 
 const content = {
   es: {
-    nav: 'Nahuel Viera — Desarrollador de Software',
+    nav: 'Nahuel Viera',
     common: {
       coldStartNotice: 'Esta demo se encuentra en infraestructura gratuita y puede tardar ~30s en iniciar por "Cold Start".',
       optimizedNotice: 'Demo optimizada: Cold start mitigado mediante monitoreo activo 24/7.',
@@ -23,7 +23,7 @@ const content = {
       greeting: 'Hola, soy Nahuel',
       title: 'Software Developer',
       subtitle:
-        'Especializado en .NET, Angular, React y Next.js | Construyendo aplicaciones web modernas y resolviendo problemas reales a través del software, con foco en rendimiento, mantenibilidad y experiencia de usuario.',
+        'Enfocado en .NET, Angular, React y Next.js | Construyendo aplicaciones web modernas y resolviendo problemas reales a través del software, con foco en rendimiento, mantenibilidad y experiencia de usuario.',
     },
 
     cta: {
@@ -33,13 +33,13 @@ const content = {
 
     about: {
       title: "Sobre mí",
-      text1: "Soy un estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. He desarrollado aplicaciones web utilizando tecnologías como .NET, Angular, React, Next.js y Supabase, adaptándome a las necesidades de cada proyecto y buscando construir soluciones mantenibles, eficientes y bien estructuradas.",
+      text1: "Soy un estudiante avanzado de la Licenciatura en Informática, apasionado por la ingeniería de software y la resolución de problemas. He desarrollado aplicaciones web utilizando tecnologías como <strong>.NET</strong>, <strong>Angular</strong>, React, Next.js y Supabase, adaptándome a las necesidades de cada proyecto y buscando construir soluciones mantenibles, eficientes y bien estructuradas.",
 
-      text2: "Me interesa comprender el ciclo de vida completo de una aplicación, desde el diseño de APIs REST y el modelado de datos hasta la lógica de negocio, la arquitectura y la integración de interfaces modernas.",
+      text2: "Me interesa comprender el ciclo de vida completo de una aplicación, desde el diseño de <strong>APIs REST</strong> y el modelado de datos hasta la lógica de negocio, la <strong>arquitectura</strong> y la integración de interfaces modernas.",
 
-      text3: "A través de diversos proyectos académicos y personales, entre ellos Buscaló, he desarrollado aplicaciones tipo SaaS y e-commerce, enfrentando desafíos relacionados con autenticación, integración de APIs, organización del software y despliegues básicos en la nube.",
+      text3: "A través de diversos proyectos académicos y personales, entre ellos Buscaló, he desarrollado aplicaciones tipo <strong>SaaS</strong> y e-commerce, enfrentando desafíos relacionados con autenticación, integración de APIs, organización del software y despliegues básicos en la nube.",
 
-      text4: "Además, incorporo herramientas de Inteligencia Artificial y automatización en mi flujo de trabajo para potenciar la productividad y el desarrollo de soluciones.",
+      text4: "Además, incorporo herramientas de <strong>Inteligencia Artificial</strong> y automatización en mi flujo de trabajo para potenciar la productividad y el desarrollo de soluciones.",
     },
 
     languages: {
@@ -65,31 +65,31 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'E-commerce full stack basado en una arquitectura distribuida de 8 microservicios. El principal desafío fue optimizar el consumo de recursos en entornos cloud limitados (512MB RAM) y mitigar el impacto del cold start en servicios serverless. Implementa Saga Pattern para garantizar consistencia de datos, YARP como API Gateway y seguridad centralizada mediante JWT y RBAC.',
+          'E-commerce full stack basado en una arquitectura distribuida de 8 microservicios. El principal desafío fue optimizar el consumo de recursos en entornos cloud limitados mediante Saga Pattern, YARP Gateway y JWT.',
       },
 
       tracklass: {
         name: 'Tracklass',
         desc:
-          'Plataforma SaaS para gestión educativa y control financiero. El mayor desafío técnico fue el diseño de lógica financiera sobre PostgreSQL para consolidación de ingresos y estados de deuda en tiempo real. Implementa una arquitectura por capas en .NET 8, optimizando el consumo de recursos mediante la delegación de reportes (PDF/Excel) al navegador (CSR). Integra notificaciones automatizadas vía WhatsApp para el seguimiento dinámico de actividades.',
+          'Plataforma SaaS para gestión educativa y control financiero. El principal desafío fue diseñar lógica financiera sobre PostgreSQL para consolidación de ingresos y deuda en tiempo real. Arquitectura por capas en .NET 8, reportes en el navegador y notificaciones vía WhatsApp.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en el backend (.NET). Aplica arquitectura orientada a servicios (SOA) y pruebas unitarias para garantizar integridad en las transacciones de reserva.',
+          'Plataforma de alquiler de vehículos con motor de disponibilidad inteligente. El principal desafío fue implementar lógica de colisiones de fechas en .NET. Aplica arquitectura SOA y pruebas unitarias para integridad en las transacciones de reserva.',
       },
 
       technicalTest: {
         name: 'Nexus Inventory',
         desc:
-          'Sistema de gestión de inventario que inicié como una prueba técnica y decidí refactorizar por completo para aplicar conocimientos avanzados. Implementé una arquitectura reactiva con Angular Signals y un rediseño total estilo SaaS, transformando una herramienta simple en un panel de control empresarial con métricas de valor real y alto rendimiento.',
+          'Sistema de gestión de inventario que inició como prueba técnica y refactorizé por completo. Implementa arquitectura reactiva con Angular Signals y rediseño estilo SaaS, transformándolo en un panel de control empresarial con métricas de alto rendimiento.',
       },
 
       saas: {
         name: 'Buscaló – Plataforma SaaS de Conexión de Negocios',
         desc:
-          'Plataforma web SaaS de alto rendimiento diseñada para conectar usuarios con emprendedores y servicios locales. Desarrollada con arquitectura Server-First en Next.js 16 y Supabase, aprovecha el renderizado híbrido (SSR/ISR) para una indexación SEO óptima y tiempos de carga instantáneos, eliminando la fricción en la búsqueda y contratación directa a través de integraciones ágiles de WhatsApp y redes sociales. El sistema incluye un panel de administración robusto para moderación en tiempo real, suscripciones con planes de membresía premium, analíticas de conversión de leads y búsqueda inteligente optimizada en base de datos.',
+          'Plataforma SaaS de alto rendimiento desarrollada con Next.js 16 y Supabase que conecta usuarios con emprendedores y servicios locales. El principal desafío fue ofrecer una experiencia de búsqueda rápida y una indexación SEO eficiente mediante renderizado híbrido SSR/ISR. Incluye un panel de administración para moderación en tiempo real, suscripciones premium y analíticas de conversión.',
       },
     },
 
@@ -105,7 +105,7 @@ const content = {
   },
 
   en: {
-    nav: 'Nahuel Viera — Software Developer',
+    nav: 'Nahuel Viera',
     common: {
       coldStartNotice: 'This demo is on free tier infrastructure and may take ~30s to start due to "Cold Start".',
       optimizedNotice: 'Optimized demo: Cold start mitigated via active 24/7 monitoring.',
@@ -160,31 +160,31 @@ const content = {
       microservices: {
         name: 'E-Commerce Microservices',
         desc:
-          'Full-stack e-commerce based on a distributed architecture of 8 microservices. The main challenge was optimizing resource consumption in constrained cloud environments (512MB RAM) and mitigating cold start impact in serverless services. It implements Saga Pattern to guarantee data consistency, YARP as an API Gateway, and centralized security through JWT and RBAC.',
+          'Full-stack e-commerce based on a distributed architecture of 8 microservices. The main challenge was optimizing resource consumption in constrained cloud environments through Saga Pattern, YARP Gateway, and JWT.',
       },
 
       tracklass: {
         name: 'Tracklass',
         desc:
-          'SaaS platform for educational management and financial control. The major technical challenge was the design of financial logic on PostgreSQL for real-time income consolidation and debt status tracking. It implements a layered architecture in .NET 8, optimizing resource consumption by delegating reports (PDF/Excel) to the browser (CSR). Integrates automated WhatsApp notifications for dynamic activity tracking.',
+          'SaaS platform for educational management and financial control. The main challenge was designing financial logic on PostgreSQL for real-time income and debt consolidation. Layered architecture in .NET 8, browser-side reporting, and WhatsApp notifications.',
       },
 
       rento: {
         name: 'Rento',
         desc:
-          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in the backend (.NET). It follows Service-Oriented Architecture (SOA) and includes unit tests to ensure the integrity of booking transactions.',
+          'Car rental platform featuring an intelligent availability engine. The main challenge was implementing date collision logic in .NET. Follows SOA architecture with unit tests for booking transaction integrity.',
       },
 
       technicalTest: {
         name: 'Nexus Inventory',
         desc:
-          'Inventory management system that started as a technical test and I decided to fully refactor to apply advanced knowledge. I implemented a reactive architecture with Angular Signals and a total SaaS-style redesign, transforming a simple tool into an enterprise dashboard with real value metrics and high performance.',
+          'Inventory management system that started as a technical test and I fully refactored. Implements reactive architecture with Angular Signals and a SaaS-style redesign, transforming it into an enterprise dashboard with high-performance metrics.',
       },
 
       saas: {
         name: 'Buscaló – SaaS Business Connection Platform',
         desc:
-          'High-performance SaaS web platform designed to connect users with local entrepreneurs and services. Developed using a Server-First architecture with Next.js 16 and Supabase, it leverages hybrid rendering (SSR/ISR) for optimal SEO indexing and instant load times, eliminating friction in searching and direct hiring through agile WhatsApp and social media integrations. The system features a robust admin panel for real-time moderation, premium membership subscription plans, lead conversion analytics, and database-optimized smart search.',
+          'High-performance SaaS platform built with Next.js 16 and Supabase that connects users with local entrepreneurs and services. The main challenge was delivering fast search and efficient SEO indexing through hybrid SSR/ISR rendering. Includes an admin panel for real-time moderation, premium subscriptions, and conversion analytics.',
       },
     },
 
@@ -392,27 +392,34 @@ export default function Portfolio() {
             : "bg-transparent border-transparent"
           }`}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-6">
           <a
             href="#hero"
-            className="flex items-center gap-2 text-sm sm:text-base font-semibold hover:opacity-70 transition-opacity truncate mr-4"
+            className="flex items-center gap-2.5 hover:opacity-70 transition-opacity"
           >
-            <span>{t.nav}</span>
-            <img src="/flags/uy.svg" alt="Uruguay" className="w-4 h-4 sm:w-5 sm:h-5 rounded-sm shadow-sm" />
+            <span className="logo-badge relative flex items-center justify-center h-8 px-2.5 rounded-lg bg-gradient-to-br from-[#10b981] to-[#059669] shadow-[0_0_14px_rgba(16,185,129,0.35)]">
+              <span className="text-[13px] font-bold text-white font-mono tracking-tight">&lt;/&gt;</span>
+            </span>
+            <span className="text-sm sm:text-base font-semibold tracking-tight">
+              Nahuel Viera
+            </span>
+            <img src="/flags/uy.svg" alt="Uruguay" className="w-4 h-4 rounded-sm shadow-sm" />
           </a>
-          <div className="flex items-center gap-2 sm:gap-4">
-            <a href="#about" className={`nav-link hidden sm:inline ${activeSection === 'about' ? 'active' : ''}`}>
+          <div className="flex items-center justify-center gap-4 sm:gap-6">
+            <a href="#about" className={`nav-link hidden sm:inline px-1.5 ${activeSection === 'about' ? 'active' : ''}`}>
               {language === 'es' ? 'Sobre mí' : 'About'}
             </a>
-            <a href="#tech" className={`nav-link hidden sm:inline ${activeSection === 'tech' ? 'active' : ''}`}>
+            <a href="#tech" className={`nav-link hidden sm:inline px-1.5 ${activeSection === 'tech' ? 'active' : ''}`}>
               {language === 'es' ? 'Stack' : 'Stack'}
             </a>
-            <a href="#projects" className={`nav-link hidden sm:inline ${activeSection === 'projects' ? 'active' : ''}`}>
+            <a href="#projects" className={`nav-link hidden sm:inline px-1.5 ${activeSection === 'projects' ? 'active' : ''}`}>
               {language === 'es' ? 'Proyectos' : 'Projects'}
             </a>
-            <a href="#contact" className={`nav-link hidden sm:inline ${activeSection === 'contact' ? 'active' : ''}`}>
+            <a href="#contact" className={`nav-link hidden sm:inline px-1.5 ${activeSection === 'contact' ? 'active' : ''}`}>
               {language === 'es' ? 'Contacto' : 'Contact'}
             </a>
+          </div>
+          <div className="flex items-center justify-end gap-3 sm:gap-4">
             <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
 
               <button
@@ -438,7 +445,7 @@ export default function Portfolio() {
             </div>
             <button
               onClick={toggleTheme}
-              className="p-2 hover:bg-muted rounded-md transition-colors"
+              className="p-2 hover:bg-muted rounded-md transition-all"
               aria-label="Toggle theme"
             >
               {isDark ? '☀️' : '🌙'}
@@ -568,23 +575,25 @@ export default function Portfolio() {
                     ? "Nahuel_Viera_Software_Developer_CV.pdf"
                     : "Nahuel-Viera-CV-FullStack-Developer.pdf"
                 }
-                className="hero-btn hero-btn-primary inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#10b981] hover:bg-[#059669] text-white rounded-lg font-medium"
+                className="btn btn-primary"
               >
-                <Download className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+                <Download />
                 {language === "es" ? "Descargar CV" : "Download CV"}
               </a>
 
               <a
                 href="#projects"
-                className="hero-btn hero-btn-secondary inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90"
+                className="btn btn-secondary"
               >
+                <ArrowRight />
                 {t.cta.work}
               </a>
 
               <a
                 href="#contact"
-                className="hero-btn hero-btn-outline inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-foreground/30 rounded-lg font-medium hover:bg-muted"
+                className="btn btn-outline"
               >
+                <Mail />
                 {t.cta.contact}
               </a>
 
@@ -602,17 +611,17 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-20 sm:py-32 px-4 sm:px-6 bg-muted/30 dark:bg-muted/5 relative">
+        className="section-container px-4 sm:px-6 bg-muted/30 dark:bg-muted/5 relative">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.about.title}</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
             {/* Narrative Column */}
-            <div className="lg:col-span-2 space-y-6 text-base sm:text-lg text-foreground/80 leading-relaxed">
-              <p>{t.about.text1}</p>
-              <p>{t.about.text2}</p>
-              <p>{t.about.text3}</p>
-              <p className="font-medium text-foreground/90 text-lg sm:text-xl">{t.about.text4}</p>
+            <div className="lg:col-span-2 space-y-8 text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[75ch]">
+              <p dangerouslySetInnerHTML={{ __html: t.about.text1 }} />
+              <p dangerouslySetInnerHTML={{ __html: t.about.text2 }} />
+              <p dangerouslySetInnerHTML={{ __html: t.about.text3 }} />
+              <p className="font-medium text-foreground/90 text-lg sm:text-xl" dangerouslySetInnerHTML={{ __html: t.about.text4 }} />
             </div>
 
             {/* Formal Data Column (Education & Languages) */}
@@ -637,7 +646,8 @@ export default function Portfolio() {
 
               {/* Languages */}
               <div className="glass-card p-6 sm:p-7 border-l-4 border-l-blue-500">
-                <h3 className="text-xl font-bold mb-6">
+                <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
+                  <Languages className="w-5 h-5 text-blue-500" />
                   {t.languages.title}
                 </h3>
                 <div className="space-y-6">
@@ -675,7 +685,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-20 sm:py-32 px-4 sm:px-6 relative"
+        className="section-container px-4 sm:px-6 relative"
       >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.tech.title}</h2>
@@ -800,7 +810,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-20 sm:py-32 px-4 sm:px-6 bg-muted/30 dark:bg-muted/5"
+        className="section-container px-4 sm:px-6 bg-muted/30 dark:bg-muted/5"
       >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-16 section-title">{t.projects.title}</h2>
@@ -811,12 +821,13 @@ export default function Portfolio() {
                 key: "saas",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/v1781630694/725b9bc1-72d4-425a-b8d7-965bd64e0b6d.png",
                 techs: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Resend"],
-                demo: "https://buscalo-uy.vercel.app/"
+                demo: "https://buscalo.uy",
+                demoLabel: { es: "Ir al sitio", en: "Visit site" }
               },
               {
                 key: "microservices",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image_pfsvtg.png",
-                techs: [".NET 10", "Microservices", "Docker", "YARP Gateway", "PostgreSQL", "JWT & RBAC", "Saga Pattern", "xUnit", "RAM Optimization", "Cloud deploy (Neon, Render)"],
+                techs: [".NET 10", "PostgreSQL", "Docker", "YARP Gateway", "JWT & RBAC", "Saga Pattern"],
                 github: "https://github.com/Nahuevp/E-Commerce-Microservices",
                 demo: "https://ecommerce-microservices-ow4d.onrender.com/",
                 isFreeTier: true
@@ -824,7 +835,7 @@ export default function Portfolio() {
               {
                 key: "tracklass",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/image2_op6bbw.png",
-                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "CSR Reporting", "WhatsApp API", "Angular Material", "Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular 20", ".NET 8", "PostgreSQL", "Layered Architecture", "WhatsApp API", "Angular Material"],
                 github: "https://github.com/Nahuevp/Tracklass",
                 demo: "https://tracklass-five.vercel.app/dashboard",
                 isFreeTier: true
@@ -832,7 +843,7 @@ export default function Portfolio() {
               {
                 key: "rento",
                 image: "https://res.cloudinary.com/dclt3q5lo/image/upload/w_600,f_auto,q_auto/rento2_enuzvg.png",
-                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)", "Availability Logic", "Cloud deploy (Neon, Render, Vercel)"],
+                techs: ["Angular", ".NET 8", "PostgreSQL", "Service Pattern", "Unit Testing (xUnit)"],
                 github: "https://github.com/Nahuevp/rento-car-rental-app",
                 demo: "https://rento-car-rental-app.vercel.app/",
                 isFreeTier: true
@@ -874,15 +885,17 @@ export default function Portfolio() {
                     {/* Project Info */}
                     <div className="p-6 sm:p-8 flex flex-col flex-1 relative z-10">
                       {project.key === 'saas' && (
-                        <div className="badge-saas">
-                          SaaS Platform
+                        <div className="mb-3">
+                          <div className="badge-saas">
+                            🚀 {language === 'es' ? 'Emprendimiento' : 'Entrepreneurship'}
+                          </div>
                         </div>
                       )}
                       <h3 className="text-lg sm:text-xl font-semibold mb-3">
                         {proj.name}
                       </h3>
 
-                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed min-h-[210px]">
+                    <p className="text-sm sm:text-base text-foreground/70 mb-4 leading-relaxed min-h-[180px]">
                       {proj.desc}
                     </p>
 
@@ -915,7 +928,7 @@ export default function Portfolio() {
                     )}
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {project.techs.map((tech) => (
                         <span
                           key={tech}
@@ -927,16 +940,16 @@ export default function Portfolio() {
                     </div>
 
                     {/* Links */}
-                    <div className="flex gap-3 mt-auto pt-2">
+                    <div className="flex gap-3 mt-auto pt-6">
 
                       {project.github && (
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-3 py-1.5 text-sm rounded-md border border-border bg-muted/40 hover:bg-muted transition"
+                          className="btn btn-outline"
                         >
-                          <Github className="w-4 h-4" />
+                          <Github />
                           {language === 'es' ? 'Código' : 'Code'}
                         </a>
                       )}
@@ -946,10 +959,10 @@ export default function Portfolio() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-3 py-1.5 text-sm rounded-md border border-border bg-muted/40 hover:bg-muted transition"
+                          className="btn btn-outline"
                         >
-                          <ExternalLink className="w-4 h-4" />
-                          Demo
+                          <ExternalLink />
+                          {(project as any).demoLabel ? (project as any).demoLabel[language] : 'Demo'}
                         </a>
                       )}
 
@@ -972,7 +985,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-20 sm:py-32 px-4 sm:px-6"
+        className="section-container px-4 sm:px-6"
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 section-title">{t.contact.title}</h2>
@@ -980,7 +993,7 @@ export default function Portfolio() {
             {t.contact.subtitle}
           </p>
 
-          <div className="flex flex-col gap-12 items-center">
+          <div className="flex flex-col gap-16 items-center">
             {/* Form */}
             <form onSubmit={sendEmail} className="w-full max-w-xl space-y-4">
               <input type="text" name="company" className="hidden" />
@@ -1002,7 +1015,7 @@ export default function Portfolio() {
               </div>
               <textarea
                 name="message"
-                placeholder={language === 'es' ? 'Mensaje' : 'Message'}
+                placeholder={language === 'es' ? 'Contame sobre tu proyecto o la oportunidad...' : 'Tell me about your project or opportunity...'}
                 rows={4}
                 maxLength={1000}
                 required
@@ -1014,18 +1027,18 @@ export default function Portfolio() {
             </form>
 
             <div className="w-full max-w-2xl">
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 items-center">
+              <div className="flex flex-wrap justify-center gap-6 sm:gap-8 items-center">
                 {/* Email Copy Button (Social Style) */}
                 <button
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card group relative"
+                  className="btn btn-ghost group min-w-[160px]"
                 >
                   {emailCopied ? (
-                    <Check className="w-5 h-5 text-[#10b981]" />
+                    <Check className="text-[#10b981]" />
                   ) : (
-                    <Mail className="w-5 h-5" />
+                    <Mail />
                   )}
-                  <span className="min-w-[100px]">
+                  <span>
                     {emailCopied 
                       ? (language === 'es' ? '¡Copiado!' : 'Copied!') 
                       : (language === 'es' ? 'Copiar Email' : 'Copy Email')}
@@ -1036,18 +1049,18 @@ export default function Portfolio() {
                   href="https://github.com/Nahuevp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card"
+                  className="btn btn-ghost min-w-[140px]"
                 >
-                  <Github className="w-5 h-5" />
+                  <Github />
                   GitHub
                 </a>
                 <a
                   href="https://www.linkedin.com/in/nahuel-viera-porta-518077281"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/10 rounded-xl font-medium hover:bg-muted transition-all glass-card"
+                  className="btn btn-ghost min-w-[140px]"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin />
                   LinkedIn
                 </a>
               </div>
