@@ -228,7 +228,6 @@ const technologies = {
     { name: "Git", logo: "/icons/git.svg" },
     { name: "Docker", logo: "/icons/docker.svg" },
     { name: "Swagger", logo: "/icons/swagger.svg" },
-    { name: "Azure", logo: "/icons/azure.svg" },
     { name: "Vercel", logo: "/icons/vercel.svg" },
     { name: "Render", logo: "/icons/render.svg" },
     { name: "Neon", logo: "/icons/neon.svg" },
